@@ -1,0 +1,47 @@
+VsDoc for jQuery
+
+Microsoft 现在完全支持 jQuery 并将它集成在ASP.NET MVC 框架。jQuery-vsdoc.js文件，该文件对串连的jQuery selector方法的JavaScript intellisense提供了帮助注释和支持。 此外，扩展已完全集成 jQuery Visual Studio 2008 SP 1 中的 IntelliSense。2009年2月24日Visual Web Developer Team宣告了1.3*-vsdoc的官方版本! 現在大家可以直接由jQuery官方网站的下载页面直接下载。
+
+
+
+使用方法：
+
+第一步： 安装VS 2008 SP1
+
+VS 2008 SP1 在Visual Studio中加了更丰富的JavaScript intellisense支持，对很大部分的JavaScript库加了代码完成支持。
+
+你可以在这里下载VS 2008 SP1 和 Visual Web Developer 2008 Express SP1。
+
+第二步： 安装VS 2008 Patch KB958502以支持"-vsdoc.js"Intellisense文件
+
+你可以将其运用到VS 2008 SP1 和 VWD 2008 Express SP1版本上，该补丁会导致Visual Studio在一个JavaScript库被引用时，查找是否存在一个可选的"-vsdoc.js"文件，如果存在的话，就用它来驱动 JavaScript intellisense引擎。
+
+这些加了注释的"-vsdoc.js"文件可以包含对JavaScript方法提供了帮助文档的XML注释，以及对无法自动推断出的动态JavaScript签名的另外的代码intellisense提示。你可以在这里了解该补丁的详情。你可以在这里免费下载该补丁。
+
+第三步： 下载jQuery-vsdoc.js文件
+
+你可以在jQuery.com网站的官方下载网页上下载jQuery和jQuery-vsdoc文件：
+
+注意jquery-1.3.2.js和jquery-1.3.2-vsdoc.js文件名称问题，默认下载的文件会有一个.min的后缀，请将该后缀去掉，否则vs中的JavaScript intellisense引擎会罢工滴，并且这两个文件必须放在同一个目录。
+
+在webform页引用jquery-1.3.2.js文件即可使用。如：
+
+如果是js文件的话，需要在文件头引用///
+
+ 
+
+到这里JavaScript intellisense引擎对jquery类库就能正常工作了，如果对英文理解不好可以到这里下载中文手册。
+
+ 
+
+Minimize Code by Using jQuery and Data Templates :http://weblogs.asp.net/dwahlin/archive/2009/04/17/minimize-code-by-using-jquery-and-data-templates.aspx
+
+Client Templating with jQuery: http://www.west-wind.com/Weblog/posts/509108.aspx
+
+Using of JSON Result in Asp.net MVC 1.0: http://weblogs.asp.net/mehfuzh/archive/2009/04/28/using-of-json-result-in-asp-net-mvc-1-0.aspx
+
+Script and CSS Management in ASP.NET MVC : http://weblogs.asp.net/rashid/archive/2009/04/28/script-and-css-management-in-asp-net-mvc.aspx
+
+Creating jQuery plug-ins from MicrosoftAjax components : http://weblogs.asp.net/bleroy/archive/2009/05/04/creating-jquery-plug-ins-from-microsoftajax-components.aspx
+
+Getting Started with jQuery in Visual Studio 2008 http://weblogs.asp.net/markwisecarver/archive/2009/06/05/getting-started-with-jquery-in-visual-studio-2008.aspx

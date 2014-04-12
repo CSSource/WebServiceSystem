@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ClerkMaster.master.cs"
+    Inherits="AfterSaleServiceSystem.Serviceman.ClerkMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <dl>
+            <dt>
+                <img width="250" height="40" src="../img/in_01.jpg" />
+            </dt>
+            <dt><font color="#663300"  = "3">销售及售后服务系统</font> </dt>
+        </dl>
+        <a href="~/Serviceman/ClerkMain.aspx">| 首页 |</a> <a href="~/Serviceman/UserDetail.aspx">
+            账户设置 |</a> <a href="~/Serviceman/ChangePassword.aspx">修改密码 |</a> <a href="">搜索 |</a>
+        <a href="~/Logout.aspx">退出 |</a>
+        <br />
+        <hr />
+        <div class="float:right">
+            <asp:Image ID="ImageUser" runat="server" src="../img/noavatar_small.gif" Width="48"
+                Height="48" />
+            <asp:Label ID="LabelUserName" runat="server" Text="未知用户"></asp:Label>
+        </div>
+        <hr />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <br />
+        <br />
+        Copyright © 2013-2015 <a href="http://www.capitalnc.com">上海开通数控有限公司 </a>版权所有
+        <br />
+        系统开发：黄宁晧 程慎 界面设计：谭一帆
+    </div>
+    </form>
+</body>
+</html>
