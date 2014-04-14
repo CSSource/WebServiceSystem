@@ -13,6 +13,15 @@ namespace AfterSaleServiceSystem.Serviceman
 {
     public partial class ClerkMain : System.Web.UI.Page
     {
+        protected override void OnLoadComplete(EventArgs e)
+        {
+            if (Context.Session["UserId"] == null || Context.Session["UserId"] == string.Empty || Convert.ToInt32(Context.Session["UserId"]) != 1)
+            {
+                //用户未登录，重定向到登录页面
+                this.Response.Redirect(MapPath("~/LogIn.ashx"));
+                
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

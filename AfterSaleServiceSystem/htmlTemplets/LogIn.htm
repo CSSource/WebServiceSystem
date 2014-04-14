@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+    <title>登陆</title>
+</head>
+<body>
+
+
+<form  action ="../LogIn.ashx" method ="get"  >
+
+<script  type ="text/javascript"   language ="javascript"  >
+                 function check() {
+                     if (document.getElementById("name").value == "")
+                     { document.getElementById("usernameValidate").innerHTML = "用户名不能为空"; }
+                 }
+    </script>
+<p>用户名 <input type ="text" name = "username" onblur ="check()"   id = "name"/><span id  = "usernameValidate"  ></span> </p>
+<p> 密码  <input type ="text" name = "password"  /></p>
+<div> <input   type = "submit"  name  ="登陆" value = "登陆"   /><span id  = "Span1"  >$Model.tips</span> </div>
+</form>
+</body>
+</html>

@@ -18,16 +18,16 @@ namespace AfterSaleServiceSystem
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            //context.Response.Write("Hello World");
-            //这样你就可以如下 操作了
+          
 
+    
             if (context.Session["UserID"] != null)
             {
                 context.Session["UserID"] = null;
             }
-
+           
             //...继续
-            context.Response.Redirect("~\\Default.aspx");
+            context.Response.Redirect("~/LogIn.ashx");
 
         }
 

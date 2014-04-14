@@ -19,7 +19,7 @@
         </dl>
         <a href="~/Serviceman/ClerkMain.aspx">| 首页 |</a> <a href="~/Serviceman/UserDetail.aspx">
             账户设置 |</a> <a href="~/Serviceman/ChangePassword.aspx">修改密码 |</a> <a href="">搜索 |</a>
-        <a href="~/Logout.aspx">退出 |</a>
+        <a href="../Logout.ashx">退出 |</a>
         <br />
         <hr />
         <div class="float:right">
@@ -34,7 +34,7 @@
         <br />
         Copyright © 2013-2015 <a href="http://www.capitalnc.com">上海开通数控有限公司 </a>版权所有
         <br />
-        系统开发：黄宁晧 程慎 界面设计：谭一帆
+        系统开发：黄宁晧 程慎 界面设计：谭一
     </div>
     </form>
 </body>

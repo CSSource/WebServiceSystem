@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -64,6 +65,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonHelper.cs" />
     <Compile Include="DAL\dsClerk.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +100,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.ashx.cs">
+      <DependentUpon>LogIn.ashx</DependentUpon>
     </Compile>
     <Compile Include="Logout.ashx.cs">
       <DependentUpon>Logout.ashx</DependentUpon>
@@ -144,6 +149,34 @@
     </Compile>
     <Compile Include="Serviceman\UserDetail.aspx.designer.cs">
       <DependentUpon>UserDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\createRepairSheet.aspx.cs">
+      <DependentUpon>createRepairSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\createRepairSheet.aspx.designer.cs">
+      <DependentUpon>createRepairSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\customListvew.aspx.cs">
+      <DependentUpon>customListvew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\customListvew.aspx.designer.cs">
+      <DependentUpon>customListvew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\repairSheetView.aspx.cs">
+      <DependentUpon>repairSheetView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\repairSheetView.aspx.designer.cs">
+      <DependentUpon>repairSheetView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\supervisorHomePage.aspx.cs">
+      <DependentUpon>supervisorHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\supervisorHomePage.aspx.designer.cs">
+      <DependentUpon>supervisorHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebErr.aspx.cs">
       <DependentUpon>WebErr.aspx</DependentUpon>
@@ -209,23 +242,27 @@
     <None Include="DAL\dsRepairState.xss">
       <DependentUpon>dsRepairState.xsd</DependentUpon>
     </None>
+    <Content Include="LogIn.ashx" />
     <Content Include="Global.asax" />
     <Content Include="img\bg_404.gif" />
     <Content Include="js\jquery-2.0.2.js" />
     <Content Include="js\jquery-2.0.2.min.js" />
     <Content Include="js\kindeditor\kindeditor-min.js" />
     <Content Include="js\kindeditor\zh_CN.js" />
+    <Content Include="htmlTemplets\LogIn.htm" />
     <Content Include="Logout.ashx" />
+    <Content Include="NVelocity.dll" />
     <Content Include="Serviceman\ChangePassword.aspx" />
     <Content Include="Serviceman\ClerkMain.aspx" />
     <Content Include="Serviceman\ClerkMaster.Master" />
     <Content Include="Serviceman\SheetDetail.aspx" />
     <Content Include="Serviceman\SheetLog.aspx" />
     <Content Include="Serviceman\UserDetail.aspx" />
+    <Content Include="Supervisor\createRepairSheet.aspx" />
+    <Content Include="Supervisor\customListvew.aspx" />
+    <Content Include="Supervisor\repairSheetView.aspx" />
+    <Content Include="Supervisor\supervisorHomePage.aspx" />
     <Content Include="WebErr.aspx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Supervisor\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
