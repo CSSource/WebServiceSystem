@@ -11,8 +11,8 @@
             <tr style="background-color: #FFFBD6;color: #333333;">
                 <td>
                     <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
-                        Text="Delete" />
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                        Text="删除" />
+                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
                 </td>
                 <td>
                     <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
@@ -63,8 +63,8 @@
             <tr style="background-color: #FAFAD2;color: #284775;">
                 <td>
                     <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
-                        Text="Delete" />
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                        Text="删除" />
+                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
                 </td>
                 <td>
                     <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
@@ -124,9 +124,9 @@
             <tr style="">
                 <td>
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" 
-                        Text="Insert" />
+                        Text="插入" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
-                        Text="Clear" />
+                        Text="清除" />
                 </td>
                 <td>
                     &nbsp;</td>
@@ -185,21 +185,21 @@
                                 <th runat="server">
                                     id</th>
                                 <th runat="server">
-                                    company</th>
+                                    公司</th>
                                 <th runat="server">
-                                    address</th>
+                                    地址</th>
                                 <th runat="server">
-                                    zipcode</th>
+                                    邮编</th>
                                 <th runat="server">
-                                    name</th>
+                                    联系人</th>
                                 <th runat="server">
-                                    telareacode</th>
+                                    区号</th>
                                 <th runat="server">
-                                    telephone</th>
+                                    电话</th>
                                 <th runat="server">
-                                    telextension</th>
+                                    分机号</th>
                                 <th runat="server">
-                                    mobilephone</th>
+                                    手机</th>
                                 <th runat="server">
                                     email</th>
                                 <th runat="server">
