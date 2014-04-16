@@ -150,6 +150,13 @@
     <Compile Include="Serviceman\UserDetail.aspx.designer.cs">
       <DependentUpon>UserDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Supervisor\clerkSheetView.aspx.cs">
+      <DependentUpon>clerkSheetView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\clerkSheetView.aspx.designer.cs">
+      <DependentUpon>clerkSheetView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Supervisor\createRepairSheet.aspx.cs">
       <DependentUpon>createRepairSheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,6 +265,7 @@
     <Content Include="Serviceman\SheetDetail.aspx" />
     <Content Include="Serviceman\SheetLog.aspx" />
     <Content Include="Serviceman\UserDetail.aspx" />
+    <Content Include="Supervisor\clerkSheetView.aspx" />
     <Content Include="Supervisor\createRepairSheet.aspx" />
     <Content Include="Supervisor\customListvew.aspx" />
     <Content Include="Supervisor\repairSheetView.aspx" />
