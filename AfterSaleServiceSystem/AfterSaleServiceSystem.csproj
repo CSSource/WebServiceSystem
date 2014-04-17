@@ -249,6 +249,11 @@
     <None Include="DAL\dsRepairState.xss">
       <DependentUpon>dsRepairState.xsd</DependentUpon>
     </None>
+    <None Include="login_files\ScriptResource%281%29.axd" />
+    <None Include="login_files\ScriptResource.axd" />
+    <None Include="login_files\WebResource%281%29.axd" />
+    <None Include="login_files\WebResource.axd" />
+    <Content Include="htmlTemplets\LogIn2.htm" />
     <Content Include="LogIn.ashx" />
     <Content Include="Global.asax" />
     <Content Include="img\bg_404.gif" />
@@ -257,6 +262,10 @@
     <Content Include="js\kindeditor\kindeditor-min.js" />
     <Content Include="js\kindeditor\zh_CN.js" />
     <Content Include="htmlTemplets\LogIn.htm" />
+    <Content Include="login_files\login_1.gif" />
+    <Content Include="login_files\login_2.jpg" />
+    <Content Include="login_files\login_3.jpg" />
+    <Content Include="login_files\login_button.gif" />
     <Content Include="Logout.ashx" />
     <Content Include="NVelocity.dll" />
     <Content Include="Serviceman\ChangePassword.aspx" />
