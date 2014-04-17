@@ -14,7 +14,7 @@ namespace AfterSaleServiceSystem.Serviceman
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Userid = Convert.ToInt32((Session["UserId"]));
+            int authorityid = Convert.ToInt32((Session["authorityid"]));
 
 #if DEBUG
             if (Session["UserId"] == null)
@@ -30,14 +30,14 @@ namespace AfterSaleServiceSystem.Serviceman
             }
             else
             {
-          
-                if (Userid == 1)
+
+                if (authorityid == 1)
                 {
               
                     HyperLink1.NavigateUrl = "../Serviceman/ClerkMain.aspx";
 
                 }
-                else if (Userid == 2)
+                else if (authorityid == 2)
                 { HyperLink1.NavigateUrl = "../Supervisor/supervisorHomePage.aspx"; }
                 //更新用户信
                 ///*

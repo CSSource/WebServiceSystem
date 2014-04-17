@@ -17,7 +17,7 @@
             </dt>
             <dt><font color="#663300"  = "3">销售及售后服务系统</font> </dt>
         </dl>
-        <asp:HyperLink ID="HyperLink1" runat="server" Target="../Serviceman/ChangePassword.aspx">首页</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" >首页</asp:HyperLink>
         <a href="../Serviceman/UserDetail.aspx">账户设置 |</a> <a href="../Serviceman/ChangePassword.aspx">
             修改密码 |</a> <a href="">搜索 |</a> <a href="../Logout.ashx">退出 |</a>
         <br />

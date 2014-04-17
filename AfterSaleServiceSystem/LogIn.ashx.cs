@@ -20,7 +20,7 @@ namespace AfterSaleServiceSystem
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/html";
-            string str_ispostBack = context.Request["登陆"];
+            string str_ispostBack = context.Request["btn"];
 
             if (string.IsNullOrEmpty(str_ispostBack))//请求展示
             {
@@ -30,18 +30,19 @@ namespace AfterSaleServiceSystem
             else//提交请求
             {
 
-                string username = context.Request["username"];
-                string passwd = context.Request["password"];
+                string username = context.Request["txtName"];
+                string passwd = context.Request["txtPwd"];
 
                 using (tb_clerkTableAdapter clerkTableAdapter = new tb_clerkTableAdapter())
                 {
                     if (clerkTableAdapter.GetDataByUsernameAndPassword(username, passwd).Rows.Count > 0)//存在用户
                     {
                         AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow row = (AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow)clerkTableAdapter.GetDataByUsernameAndPassword(username, passwd).Rows[0];
-                        context.Session["UserId"] = row.authorityid;
+                        context.Session["UserId"] = (int)row.id;
+                        context.Session["authorityid"] = row.authorityid;
                         if (row.authorityid == 2)//管理员登陆
                         {
-
+                         
                             context.Response.Redirect("/Supervisor/supervisorHomePage.aspx");
                             //进入管理员页面
                             //todo
