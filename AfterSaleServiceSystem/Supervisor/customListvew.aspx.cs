@@ -11,7 +11,7 @@ namespace AfterSaleServiceSystem.Supervisor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(Context.Session["UserID"]) != 2)//管理员身份
+            if (Convert.ToInt32(Context.Session["authorityid"]) != 2)//管理员身份
             {
                 Context.Response.Redirect("~/LogIn.ashx");
             }
