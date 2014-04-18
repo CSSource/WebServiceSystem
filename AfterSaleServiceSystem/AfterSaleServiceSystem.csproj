@@ -171,6 +171,13 @@
     <Compile Include="Supervisor\customListvew.aspx.designer.cs">
       <DependentUpon>customListvew.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Supervisor\getBarCode.aspx.cs">
+      <DependentUpon>getBarCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\getBarCode.aspx.designer.cs">
+      <DependentUpon>getBarCode.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Supervisor\repairSheetView.aspx.cs">
       <DependentUpon>repairSheetView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,6 +284,7 @@
     <Content Include="Supervisor\clerkSheetView.aspx" />
     <Content Include="Supervisor\createRepairSheet.aspx" />
     <Content Include="Supervisor\customListvew.aspx" />
+    <Content Include="Supervisor\getBarCode.aspx" />
     <Content Include="Supervisor\repairSheetView.aspx" />
     <Content Include="Supervisor\supervisorHomePage.aspx" />
     <Content Include="WebErr.aspx" />

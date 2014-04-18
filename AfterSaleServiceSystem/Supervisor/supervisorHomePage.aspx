@@ -8,7 +8,7 @@ MasterPageFile="~/Serviceman/ClerkMaster.Master" Inherits="AfterSaleServiceSyste
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderContent" runat="server">
 <div style="height: 400px">
-<p>  <a href ="createRepairSheet.aspx">创建维修单</a>   </p>
+<p>  <a href ="getBarCode.aspx">创建维修单</a>   </p>
 <p>  <a href ="repairSheetView.aspx">维修单列表</a>   </p>
 <p>  <a href ="customListvew.aspx">客户群列表</a>   </p>
 <p>  <a href ="clerkSheetView.aspx">维修人员列表</a>   </p>

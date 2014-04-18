@@ -8,8 +8,8 @@ MasterPageFile="~/Serviceman/ClerkMaster.Master" Inherits="AfterSaleServiceSyste
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderContent" runat="server">
 <form  action  ="createRepairSheet.aspx"  >
-  <P> 请扫描维修单条形码  <input type ="text" name = "GUID" /><asp:Label ID="Label1" 
-          runat="server"></asp:Label> </P>   
+<asp:HiddenField ID="HiddenField1" runat="server" />
+ <asp:Label ID="Label1"       runat="server"></asp:Label> </P>   
   
   <p>
   产品型号<input  type = "text" name = "productType" />
@@ -26,7 +26,7 @@ MasterPageFile="~/Serviceman/ClerkMaster.Master" Inherits="AfterSaleServiceSyste
           ConnectionString="<%$ ConnectionStrings:DatabaseAsssConnectionString %>" 
           SelectCommand="SELECT [username] FROM [tb_clerk]"></asp:SqlDataSource>
   </p>
-  <p> <input type ="submit" name ="提交"</p>
+  <p> <input type ="submit" name ="提交"  /></p>
   <p>
   <asp:Label ID="isInsertSucced" runat="server" ></asp:Label></p>
 </form>

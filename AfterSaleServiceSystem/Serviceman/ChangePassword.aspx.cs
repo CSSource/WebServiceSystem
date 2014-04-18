@@ -24,9 +24,10 @@ namespace AfterSaleServiceSystem.Serviceman
 
             if (rows.Count > 0)
             {
-                AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow row = (AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow)rows[0];
-
-               // row .password 
+                AfterSaleServiceSystem.DAL.dsClerk.tb_clerkDataTable dt = clerkTableAdapter.GetDataByid(Convert.ToInt32(Session["UserId"]));
+                AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow row = (AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow )dt.Rows[0];
+               
+                // row .password 
                 TextBox tbOld = (TextBox)this.Master.FindControl("ContentPlaceHolderContent").FindControl("TextBoxOldVal");
                 TextBox tbNew = (TextBox)this.Master.FindControl("ContentPlaceHolderContent").FindControl("TextBoxNewVal");
                 TextBox tbConfirm = (TextBox)this.Master.FindControl("ContentPlaceHolderContent").FindControl("TextBoxConfirm");
@@ -34,7 +35,15 @@ namespace AfterSaleServiceSystem.Serviceman
                 string sOld = tbOld.Text;
                 string sNew = tbNew.Text;
                 string sConfirm = tbConfirm.Text;
-
+                if (row.password.Trim() == sOld)//原密码验证成功
+                { 
+                    row.password = sNew;
+                    clerkTableAdapter.Update(dt);
+                }
+                else
+                {
+                    RequiredFieldValidatorOldVal.Text = "原始密码错误";
+                }
 
 
 

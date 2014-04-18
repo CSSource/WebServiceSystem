@@ -13,9 +13,10 @@ namespace AfterSaleServiceSystem.Supervisor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string guidRequest = HiddenField1.Value;
             if (IsPostBack)//表单提交
             {
-                string guidRequest = Context.Request["GUID"];
+        
                 string productType = Context.Request["productType"];
                 string productCode = Context.Request["productCode"];
 
@@ -29,11 +30,16 @@ namespace AfterSaleServiceSystem.Supervisor
                     dsRepairSheet.tb_repairsheetDataTable ds = new dsRepairSheet.tb_repairsheetDataTable();
                     repairsheetTableAdapter.Fill(ds);
                     //repairsheetTableAdapter.Fill(dataset, "acUser");//用表User填充dataset对象
-                    repairsheetTableAdapter.InsertQuery(guidRequest, productType, productCode, 1, 0, DropDownList1.SelectedIndex+1, 0);
+                    repairsheetTableAdapter.InsertQuery(guidRequest, productType, productCode, 1, 0, DropDownList1.SelectedIndex + 1, 0);
                     repairsheetTableAdapter.Update(ds);
                     isInsertSucced.Text = "录入成功";
                 }
 
+            }
+            else//非表单提交
+            {
+            
+            HiddenField1.Value = Context.Request["GUID"];
             }
         }
     }
