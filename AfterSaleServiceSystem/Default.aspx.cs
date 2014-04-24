@@ -11,7 +11,7 @@ namespace AfterSaleServiceSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["username"] = "";
+            Context.Response.Redirect("LogIn.ashx");
         }
     }
 }
