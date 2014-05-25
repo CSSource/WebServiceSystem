@@ -81,7 +81,7 @@
     <asp:ObjectDataSource ID="ObjectDataSource_Sheet" runat="server" DeleteMethod="Delete"
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByid"
         TypeName="AfterSaleServiceSystem.DAL.dsRepairSheetTableAdapters.tb_repairsheetTableAdapter"
-        UpdateMethod="Update">
+        UpdateMethod="Update" onselecting="ObjectDataSource_Sheet_Selecting">
         <DeleteParameters>
             <asp:Parameter Name="Original_id" Type="Int64" />
         </DeleteParameters>

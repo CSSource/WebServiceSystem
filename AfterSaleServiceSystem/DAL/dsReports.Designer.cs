@@ -21,16 +21,16 @@ namespace AfterSaleServiceSystem.DAL {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsCustomer")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsReports")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsCustomer : global::System.Data.DataSet {
+    public partial class dsReports : global::System.Data.DataSet {
         
-        private tb_customDataTable tabletb_custom;
+        private tb_reportsDataTable tabletb_reports;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public dsCustomer() {
+        public dsReports() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -40,7 +40,7 @@ namespace AfterSaleServiceSystem.DAL {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected dsCustomer(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsReports(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -53,8 +53,8 @@ namespace AfterSaleServiceSystem.DAL {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tb_custom"] != null)) {
-                    base.Tables.Add(new tb_customDataTable(ds.Tables["tb_custom"]));
+                if ((ds.Tables["tb_reports"] != null)) {
+                    base.Tables.Add(new tb_reportsDataTable(ds.Tables["tb_reports"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -77,9 +77,9 @@ namespace AfterSaleServiceSystem.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tb_customDataTable tb_custom {
+        public tb_reportsDataTable tb_reports {
             get {
-                return this.tabletb_custom;
+                return this.tabletb_reports;
             }
         }
         
@@ -120,7 +120,7 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override global::System.Data.DataSet Clone() {
-            dsCustomer cln = ((dsCustomer)(base.Clone()));
+            dsReports cln = ((dsReports)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -142,8 +142,8 @@ namespace AfterSaleServiceSystem.DAL {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tb_custom"] != null)) {
-                    base.Tables.Add(new tb_customDataTable(ds.Tables["tb_custom"]));
+                if ((ds.Tables["tb_reports"] != null)) {
+                    base.Tables.Add(new tb_reportsDataTable(ds.Tables["tb_reports"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -175,27 +175,27 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         internal void InitVars(bool initTable) {
-            this.tabletb_custom = ((tb_customDataTable)(base.Tables["tb_custom"]));
+            this.tabletb_reports = ((tb_reportsDataTable)(base.Tables["tb_reports"]));
             if ((initTable == true)) {
-                if ((this.tabletb_custom != null)) {
-                    this.tabletb_custom.InitVars();
+                if ((this.tabletb_reports != null)) {
+                    this.tabletb_reports.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass() {
-            this.DataSetName = "dsCustomer";
+            this.DataSetName = "dsReports";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsCustomer.xsd";
+            this.Namespace = "http://tempuri.org/dsReports.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletb_custom = new tb_customDataTable();
-            base.Tables.Add(this.tabletb_custom);
+            this.tabletb_reports = new tb_reportsDataTable();
+            base.Tables.Add(this.tabletb_reports);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializetb_custom() {
+        private bool ShouldSerializetb_reports() {
             return false;
         }
         
@@ -208,7 +208,7 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsCustomer ds = new dsCustomer();
+            dsReports ds = new dsReports();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -252,7 +252,7 @@ namespace AfterSaleServiceSystem.DAL {
             return type;
         }
         
-        public delegate void tb_customRowChangeEventHandler(object sender, tb_customRowChangeEvent e);
+        public delegate void tb_reportsRowChangeEventHandler(object sender, tb_reportsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -260,48 +260,60 @@ namespace AfterSaleServiceSystem.DAL {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tb_customDataTable : global::System.Data.TypedTableBase<tb_customRow> {
+        public partial class tb_reportsDataTable : global::System.Data.TypedTableBase<tb_reportsRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columncompany;
+            private global::System.Data.DataColumn columnclerkid;
             
-            private global::System.Data.DataColumn columnaddress;
+            private global::System.Data.DataColumn columnrepairsheetid;
             
-            private global::System.Data.DataColumn columnzipcode;
+            private global::System.Data.DataColumn columnwarrantyperiod;
             
-            private global::System.Data.DataColumn columnname;
+            private global::System.Data.DataColumn columnmodifytime;
             
-            private global::System.Data.DataColumn columntelareacode;
+            private global::System.Data.DataColumn columnproductname;
             
-            private global::System.Data.DataColumn columntelephone;
+            private global::System.Data.DataColumn columnproductnumber;
             
-            private global::System.Data.DataColumn columntelextension;
+            private global::System.Data.DataColumn columnsoftwareVersion;
             
-            private global::System.Data.DataColumn columnmobilephone;
+            private global::System.Data.DataColumn columnerrorcode;
             
-            private global::System.Data.DataColumn columnemail;
+            private global::System.Data.DataColumn columnbreakdowndescription;
             
-            private global::System.Data.DataColumn columnqq;
+            private global::System.Data.DataColumn columnbreakdownreason;
             
-            private global::System.Data.DataColumn columnadditional;
+            private global::System.Data.DataColumn columnresultofrepair;
             
-            private global::System.Data.DataColumn columnmsn;
+            private global::System.Data.DataColumn columnlaborcost;
             
-            private global::System.Data.DataColumn columnfax;
+            private global::System.Data.DataColumn columnpartcost;
             
-            private global::System.Data.DataColumn columnagent;
+            private global::System.Data.DataColumn columntestcost;
+            
+            private global::System.Data.DataColumn columntransitcost;
+            
+            private global::System.Data.DataColumn columnstarttime;
+            
+            private global::System.Data.DataColumn columnendtime;
+            
+            private global::System.Data.DataColumn columntype_delivery;
+            
+            private global::System.Data.DataColumn columnawbnumber_delivery;
+            
+            private global::System.Data.DataColumn columntime_delivery;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customDataTable() {
-                this.TableName = "tb_custom";
+            public tb_reportsDataTable() {
+                this.TableName = "tb_reports";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal tb_customDataTable(global::System.Data.DataTable table) {
+            internal tb_reportsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,7 +329,7 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected tb_customDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tb_reportsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -330,100 +342,142 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn companyColumn {
+            public global::System.Data.DataColumn clerkidColumn {
                 get {
-                    return this.columncompany;
+                    return this.columnclerkid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn addressColumn {
+            public global::System.Data.DataColumn repairsheetidColumn {
                 get {
-                    return this.columnaddress;
+                    return this.columnrepairsheetid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn zipcodeColumn {
+            public global::System.Data.DataColumn warrantyperiodColumn {
                 get {
-                    return this.columnzipcode;
+                    return this.columnwarrantyperiod;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn nameColumn {
+            public global::System.Data.DataColumn modifytimeColumn {
                 get {
-                    return this.columnname;
+                    return this.columnmodifytime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn telareacodeColumn {
+            public global::System.Data.DataColumn productnameColumn {
                 get {
-                    return this.columntelareacode;
+                    return this.columnproductname;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn telephoneColumn {
+            public global::System.Data.DataColumn productnumberColumn {
                 get {
-                    return this.columntelephone;
+                    return this.columnproductnumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn telextensionColumn {
+            public global::System.Data.DataColumn softwareVersionColumn {
                 get {
-                    return this.columntelextension;
+                    return this.columnsoftwareVersion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn mobilephoneColumn {
+            public global::System.Data.DataColumn errorcodeColumn {
                 get {
-                    return this.columnmobilephone;
+                    return this.columnerrorcode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn emailColumn {
+            public global::System.Data.DataColumn breakdowndescriptionColumn {
                 get {
-                    return this.columnemail;
+                    return this.columnbreakdowndescription;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn qqColumn {
+            public global::System.Data.DataColumn breakdownreasonColumn {
                 get {
-                    return this.columnqq;
+                    return this.columnbreakdownreason;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn additionalColumn {
+            public global::System.Data.DataColumn resultofrepairColumn {
                 get {
-                    return this.columnadditional;
+                    return this.columnresultofrepair;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn msnColumn {
+            public global::System.Data.DataColumn laborcostColumn {
                 get {
-                    return this.columnmsn;
+                    return this.columnlaborcost;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn faxColumn {
+            public global::System.Data.DataColumn partcostColumn {
                 get {
-                    return this.columnfax;
+                    return this.columnpartcost;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn agentColumn {
+            public global::System.Data.DataColumn testcostColumn {
                 get {
-                    return this.columnagent;
+                    return this.columntestcost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn transitcostColumn {
+                get {
+                    return this.columntransitcost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn starttimeColumn {
+                get {
+                    return this.columnstarttime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn endtimeColumn {
+                get {
+                    return this.columnendtime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn type_deliveryColumn {
+                get {
+                    return this.columntype_delivery;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn awbnumber_deliveryColumn {
+                get {
+                    return this.columnawbnumber_delivery;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn time_deliveryColumn {
+                get {
+                    return this.columntime_delivery;
                 }
             }
             
@@ -436,118 +490,162 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRow this[int index] {
+            public tb_reportsRow this[int index] {
                 get {
-                    return ((tb_customRow)(this.Rows[index]));
+                    return ((tb_reportsRow)(this.Rows[index]));
                 }
             }
             
-            public event tb_customRowChangeEventHandler tb_customRowChanging;
+            public event tb_reportsRowChangeEventHandler tb_reportsRowChanging;
             
-            public event tb_customRowChangeEventHandler tb_customRowChanged;
+            public event tb_reportsRowChangeEventHandler tb_reportsRowChanged;
             
-            public event tb_customRowChangeEventHandler tb_customRowDeleting;
+            public event tb_reportsRowChangeEventHandler tb_reportsRowDeleting;
             
-            public event tb_customRowChangeEventHandler tb_customRowDeleted;
+            public event tb_reportsRowChangeEventHandler tb_reportsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Addtb_customRow(tb_customRow row) {
+            public void Addtb_reportsRow(tb_reportsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRow Addtb_customRow(string company, string address, string zipcode, string name, string telareacode, string telephone, string telextension, string mobilephone, string email, string qq, string additional, string msn, string fax, string agent) {
-                tb_customRow rowtb_customRow = ((tb_customRow)(this.NewRow()));
+            public tb_reportsRow Addtb_reportsRow(
+                        long clerkid, 
+                        long repairsheetid, 
+                        bool warrantyperiod, 
+                        System.DateTime modifytime, 
+                        string productname, 
+                        string productnumber, 
+                        string softwareVersion, 
+                        string errorcode, 
+                        string breakdowndescription, 
+                        string breakdownreason, 
+                        string resultofrepair, 
+                        decimal laborcost, 
+                        decimal partcost, 
+                        decimal testcost, 
+                        decimal transitcost, 
+                        System.DateTime starttime, 
+                        System.DateTime endtime, 
+                        string type_delivery, 
+                        string awbnumber_delivery, 
+                        System.DateTime time_delivery) {
+                tb_reportsRow rowtb_reportsRow = ((tb_reportsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        company,
-                        address,
-                        zipcode,
-                        name,
-                        telareacode,
-                        telephone,
-                        telextension,
-                        mobilephone,
-                        email,
-                        qq,
-                        additional,
-                        msn,
-                        fax,
-                        agent};
-                rowtb_customRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtb_customRow);
-                return rowtb_customRow;
+                        clerkid,
+                        repairsheetid,
+                        warrantyperiod,
+                        modifytime,
+                        productname,
+                        productnumber,
+                        softwareVersion,
+                        errorcode,
+                        breakdowndescription,
+                        breakdownreason,
+                        resultofrepair,
+                        laborcost,
+                        partcost,
+                        testcost,
+                        transitcost,
+                        starttime,
+                        endtime,
+                        type_delivery,
+                        awbnumber_delivery,
+                        time_delivery};
+                rowtb_reportsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtb_reportsRow);
+                return rowtb_reportsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRow FindByid(long id) {
-                return ((tb_customRow)(this.Rows.Find(new object[] {
+            public tb_reportsRow FindByid(long id) {
+                return ((tb_reportsRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
-                tb_customDataTable cln = ((tb_customDataTable)(base.Clone()));
+                tb_reportsDataTable cln = ((tb_reportsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tb_customDataTable();
+                return new tb_reportsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columncompany = base.Columns["company"];
-                this.columnaddress = base.Columns["address"];
-                this.columnzipcode = base.Columns["zipcode"];
-                this.columnname = base.Columns["name"];
-                this.columntelareacode = base.Columns["telareacode"];
-                this.columntelephone = base.Columns["telephone"];
-                this.columntelextension = base.Columns["telextension"];
-                this.columnmobilephone = base.Columns["mobilephone"];
-                this.columnemail = base.Columns["email"];
-                this.columnqq = base.Columns["qq"];
-                this.columnadditional = base.Columns["additional"];
-                this.columnmsn = base.Columns["msn"];
-                this.columnfax = base.Columns["fax"];
-                this.columnagent = base.Columns["agent"];
+                this.columnclerkid = base.Columns["clerkid"];
+                this.columnrepairsheetid = base.Columns["repairsheetid"];
+                this.columnwarrantyperiod = base.Columns["warrantyperiod"];
+                this.columnmodifytime = base.Columns["modifytime"];
+                this.columnproductname = base.Columns["productname"];
+                this.columnproductnumber = base.Columns["productnumber"];
+                this.columnsoftwareVersion = base.Columns["softwareVersion"];
+                this.columnerrorcode = base.Columns["errorcode"];
+                this.columnbreakdowndescription = base.Columns["breakdowndescription"];
+                this.columnbreakdownreason = base.Columns["breakdownreason"];
+                this.columnresultofrepair = base.Columns["resultofrepair"];
+                this.columnlaborcost = base.Columns["laborcost"];
+                this.columnpartcost = base.Columns["partcost"];
+                this.columntestcost = base.Columns["testcost"];
+                this.columntransitcost = base.Columns["transitcost"];
+                this.columnstarttime = base.Columns["starttime"];
+                this.columnendtime = base.Columns["endtime"];
+                this.columntype_delivery = base.Columns["type_delivery"];
+                this.columnawbnumber_delivery = base.Columns["awbnumber_delivery"];
+                this.columntime_delivery = base.Columns["time_delivery"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columncompany = new global::System.Data.DataColumn("company", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncompany);
-                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaddress);
-                this.columnzipcode = new global::System.Data.DataColumn("zipcode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnzipcode);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columntelareacode = new global::System.Data.DataColumn("telareacode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntelareacode);
-                this.columntelephone = new global::System.Data.DataColumn("telephone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntelephone);
-                this.columntelextension = new global::System.Data.DataColumn("telextension", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntelextension);
-                this.columnmobilephone = new global::System.Data.DataColumn("mobilephone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmobilephone);
-                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemail);
-                this.columnqq = new global::System.Data.DataColumn("qq", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnqq);
-                this.columnadditional = new global::System.Data.DataColumn("additional", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnadditional);
-                this.columnmsn = new global::System.Data.DataColumn("msn", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmsn);
-                this.columnfax = new global::System.Data.DataColumn("fax", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfax);
-                this.columnagent = new global::System.Data.DataColumn("agent", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnagent);
+                this.columnclerkid = new global::System.Data.DataColumn("clerkid", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclerkid);
+                this.columnrepairsheetid = new global::System.Data.DataColumn("repairsheetid", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrepairsheetid);
+                this.columnwarrantyperiod = new global::System.Data.DataColumn("warrantyperiod", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwarrantyperiod);
+                this.columnmodifytime = new global::System.Data.DataColumn("modifytime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodifytime);
+                this.columnproductname = new global::System.Data.DataColumn("productname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproductname);
+                this.columnproductnumber = new global::System.Data.DataColumn("productnumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproductnumber);
+                this.columnsoftwareVersion = new global::System.Data.DataColumn("softwareVersion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsoftwareVersion);
+                this.columnerrorcode = new global::System.Data.DataColumn("errorcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnerrorcode);
+                this.columnbreakdowndescription = new global::System.Data.DataColumn("breakdowndescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbreakdowndescription);
+                this.columnbreakdownreason = new global::System.Data.DataColumn("breakdownreason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbreakdownreason);
+                this.columnresultofrepair = new global::System.Data.DataColumn("resultofrepair", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnresultofrepair);
+                this.columnlaborcost = new global::System.Data.DataColumn("laborcost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlaborcost);
+                this.columnpartcost = new global::System.Data.DataColumn("partcost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpartcost);
+                this.columntestcost = new global::System.Data.DataColumn("testcost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntestcost);
+                this.columntransitcost = new global::System.Data.DataColumn("transitcost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntransitcost);
+                this.columnstarttime = new global::System.Data.DataColumn("starttime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstarttime);
+                this.columnendtime = new global::System.Data.DataColumn("endtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnendtime);
+                this.columntype_delivery = new global::System.Data.DataColumn("type_delivery", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype_delivery);
+                this.columnawbnumber_delivery = new global::System.Data.DataColumn("awbnumber_delivery", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnawbnumber_delivery);
+                this.columntime_delivery = new global::System.Data.DataColumn("time_delivery", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntime_delivery);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -556,72 +654,71 @@ namespace AfterSaleServiceSystem.DAL {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columncompany.MaxLength = 100;
-                this.columnaddress.MaxLength = 50;
-                this.columnzipcode.MaxLength = 6;
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 10;
-                this.columntelareacode.MaxLength = 3;
-                this.columntelephone.MaxLength = 8;
-                this.columntelextension.MaxLength = 4;
-                this.columnmobilephone.MaxLength = 14;
-                this.columnemail.MaxLength = 30;
-                this.columnqq.MaxLength = 15;
-                this.columnadditional.MaxLength = 2147483647;
-                this.columnmsn.MaxLength = 30;
-                this.columnfax.MaxLength = 20;
-                this.columnagent.MaxLength = 100;
+                this.columnwarrantyperiod.AllowDBNull = false;
+                this.columnproductname.MaxLength = 50;
+                this.columnproductnumber.MaxLength = 20;
+                this.columnsoftwareVersion.MaxLength = 20;
+                this.columnerrorcode.MaxLength = 20;
+                this.columnbreakdowndescription.MaxLength = 2147483647;
+                this.columnbreakdownreason.MaxLength = 2147483647;
+                this.columnresultofrepair.MaxLength = 2147483647;
+                this.columnlaborcost.AllowDBNull = false;
+                this.columnpartcost.AllowDBNull = false;
+                this.columntestcost.AllowDBNull = false;
+                this.columntransitcost.AllowDBNull = false;
+                this.columntype_delivery.MaxLength = 20;
+                this.columnawbnumber_delivery.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRow Newtb_customRow() {
-                return ((tb_customRow)(this.NewRow()));
+            public tb_reportsRow Newtb_reportsRow() {
+                return ((tb_reportsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tb_customRow(builder);
+                return new tb_reportsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
-                return typeof(tb_customRow);
+                return typeof(tb_reportsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tb_customRowChanged != null)) {
-                    this.tb_customRowChanged(this, new tb_customRowChangeEvent(((tb_customRow)(e.Row)), e.Action));
+                if ((this.tb_reportsRowChanged != null)) {
+                    this.tb_reportsRowChanged(this, new tb_reportsRowChangeEvent(((tb_reportsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tb_customRowChanging != null)) {
-                    this.tb_customRowChanging(this, new tb_customRowChangeEvent(((tb_customRow)(e.Row)), e.Action));
+                if ((this.tb_reportsRowChanging != null)) {
+                    this.tb_reportsRowChanging(this, new tb_reportsRowChangeEvent(((tb_reportsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tb_customRowDeleted != null)) {
-                    this.tb_customRowDeleted(this, new tb_customRowChangeEvent(((tb_customRow)(e.Row)), e.Action));
+                if ((this.tb_reportsRowDeleted != null)) {
+                    this.tb_reportsRowDeleted(this, new tb_reportsRowChangeEvent(((tb_reportsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tb_customRowDeleting != null)) {
-                    this.tb_customRowDeleting(this, new tb_customRowChangeEvent(((tb_customRow)(e.Row)), e.Action));
+                if ((this.tb_reportsRowDeleting != null)) {
+                    this.tb_reportsRowDeleting(this, new tb_reportsRowChangeEvent(((tb_reportsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Removetb_customRow(tb_customRow row) {
+            public void Removetb_reportsRow(tb_reportsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -629,7 +726,7 @@ namespace AfterSaleServiceSystem.DAL {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsCustomer ds = new dsCustomer();
+                dsReports ds = new dsReports();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -647,7 +744,7 @@ namespace AfterSaleServiceSystem.DAL {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tb_customDataTable";
+                attribute2.FixedValue = "tb_reportsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -692,359 +789,449 @@ namespace AfterSaleServiceSystem.DAL {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class tb_customRow : global::System.Data.DataRow {
+        public partial class tb_reportsRow : global::System.Data.DataRow {
             
-            private tb_customDataTable tabletb_custom;
+            private tb_reportsDataTable tabletb_reports;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal tb_customRow(global::System.Data.DataRowBuilder rb) : 
+            internal tb_reportsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletb_custom = ((tb_customDataTable)(this.Table));
+                this.tabletb_reports = ((tb_reportsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public long id {
                 get {
-                    return ((long)(this[this.tabletb_custom.idColumn]));
+                    return ((long)(this[this.tabletb_reports.idColumn]));
                 }
                 set {
-                    this[this.tabletb_custom.idColumn] = value;
+                    this[this.tabletb_reports.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string company {
+            public long clerkid {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.companyColumn]));
+                        return ((long)(this[this.tabletb_reports.clerkidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“company”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“clerkid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.companyColumn] = value;
+                    this[this.tabletb_reports.clerkidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string address {
+            public long repairsheetid {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.addressColumn]));
+                        return ((long)(this[this.tabletb_reports.repairsheetidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“address”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“repairsheetid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.addressColumn] = value;
+                    this[this.tabletb_reports.repairsheetidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string zipcode {
+            public bool warrantyperiod {
+                get {
+                    return ((bool)(this[this.tabletb_reports.warrantyperiodColumn]));
+                }
+                set {
+                    this[this.tabletb_reports.warrantyperiodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime modifytime {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.zipcodeColumn]));
+                        return ((global::System.DateTime)(this[this.tabletb_reports.modifytimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“zipcode”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“modifytime”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.zipcodeColumn] = value;
+                    this[this.tabletb_reports.modifytimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string name {
-                get {
-                    return ((string)(this[this.tabletb_custom.nameColumn]));
-                }
-                set {
-                    this[this.tabletb_custom.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string telareacode {
+            public string productname {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.telareacodeColumn]));
+                        return ((string)(this[this.tabletb_reports.productnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“telareacode”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“productname”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.telareacodeColumn] = value;
+                    this[this.tabletb_reports.productnameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string telephone {
+            public string productnumber {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.telephoneColumn]));
+                        return ((string)(this[this.tabletb_reports.productnumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“telephone”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“productnumber”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.telephoneColumn] = value;
+                    this[this.tabletb_reports.productnumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string telextension {
+            public string softwareVersion {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.telextensionColumn]));
+                        return ((string)(this[this.tabletb_reports.softwareVersionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“telextension”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“softwareVersion”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.telextensionColumn] = value;
+                    this[this.tabletb_reports.softwareVersionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string mobilephone {
+            public string errorcode {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.mobilephoneColumn]));
+                        return ((string)(this[this.tabletb_reports.errorcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“mobilephone”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“errorcode”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.mobilephoneColumn] = value;
+                    this[this.tabletb_reports.errorcodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string email {
+            public string breakdowndescription {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.emailColumn]));
+                        return ((string)(this[this.tabletb_reports.breakdowndescriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“email”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“breakdowndescription”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.emailColumn] = value;
+                    this[this.tabletb_reports.breakdowndescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string qq {
+            public string breakdownreason {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.qqColumn]));
+                        return ((string)(this[this.tabletb_reports.breakdownreasonColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“qq”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“breakdownreason”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.qqColumn] = value;
+                    this[this.tabletb_reports.breakdownreasonColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string additional {
+            public string resultofrepair {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.additionalColumn]));
+                        return ((string)(this[this.tabletb_reports.resultofrepairColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“additional”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“resultofrepair”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.additionalColumn] = value;
+                    this[this.tabletb_reports.resultofrepairColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string msn {
+            public decimal laborcost {
+                get {
+                    return ((decimal)(this[this.tabletb_reports.laborcostColumn]));
+                }
+                set {
+                    this[this.tabletb_reports.laborcostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal partcost {
+                get {
+                    return ((decimal)(this[this.tabletb_reports.partcostColumn]));
+                }
+                set {
+                    this[this.tabletb_reports.partcostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal testcost {
+                get {
+                    return ((decimal)(this[this.tabletb_reports.testcostColumn]));
+                }
+                set {
+                    this[this.tabletb_reports.testcostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal transitcost {
+                get {
+                    return ((decimal)(this[this.tabletb_reports.transitcostColumn]));
+                }
+                set {
+                    this[this.tabletb_reports.transitcostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime starttime {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.msnColumn]));
+                        return ((global::System.DateTime)(this[this.tabletb_reports.starttimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“msn”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“starttime”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.msnColumn] = value;
+                    this[this.tabletb_reports.starttimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string fax {
+            public System.DateTime endtime {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.faxColumn]));
+                        return ((global::System.DateTime)(this[this.tabletb_reports.endtimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“fax”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“endtime”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.faxColumn] = value;
+                    this[this.tabletb_reports.endtimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string agent {
+            public string type_delivery {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_custom.agentColumn]));
+                        return ((string)(this[this.tabletb_reports.type_deliveryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_custom”中列“agent”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“type_delivery”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_custom.agentColumn] = value;
+                    this[this.tabletb_reports.type_deliveryColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IscompanyNull() {
-                return this.IsNull(this.tabletb_custom.companyColumn);
+            public string awbnumber_delivery {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_reports.awbnumber_deliveryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“awbnumber_delivery”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_reports.awbnumber_deliveryColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetcompanyNull() {
-                this[this.tabletb_custom.companyColumn] = global::System.Convert.DBNull;
+            public System.DateTime time_delivery {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletb_reports.time_deliveryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“tb_reports”中列“time_delivery”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_reports.time_deliveryColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsaddressNull() {
-                return this.IsNull(this.tabletb_custom.addressColumn);
+            public bool IsclerkidNull() {
+                return this.IsNull(this.tabletb_reports.clerkidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetaddressNull() {
-                this[this.tabletb_custom.addressColumn] = global::System.Convert.DBNull;
+            public void SetclerkidNull() {
+                this[this.tabletb_reports.clerkidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IszipcodeNull() {
-                return this.IsNull(this.tabletb_custom.zipcodeColumn);
+            public bool IsrepairsheetidNull() {
+                return this.IsNull(this.tabletb_reports.repairsheetidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetzipcodeNull() {
-                this[this.tabletb_custom.zipcodeColumn] = global::System.Convert.DBNull;
+            public void SetrepairsheetidNull() {
+                this[this.tabletb_reports.repairsheetidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IstelareacodeNull() {
-                return this.IsNull(this.tabletb_custom.telareacodeColumn);
+            public bool IsmodifytimeNull() {
+                return this.IsNull(this.tabletb_reports.modifytimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SettelareacodeNull() {
-                this[this.tabletb_custom.telareacodeColumn] = global::System.Convert.DBNull;
+            public void SetmodifytimeNull() {
+                this[this.tabletb_reports.modifytimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IstelephoneNull() {
-                return this.IsNull(this.tabletb_custom.telephoneColumn);
+            public bool IsproductnameNull() {
+                return this.IsNull(this.tabletb_reports.productnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SettelephoneNull() {
-                this[this.tabletb_custom.telephoneColumn] = global::System.Convert.DBNull;
+            public void SetproductnameNull() {
+                this[this.tabletb_reports.productnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IstelextensionNull() {
-                return this.IsNull(this.tabletb_custom.telextensionColumn);
+            public bool IsproductnumberNull() {
+                return this.IsNull(this.tabletb_reports.productnumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SettelextensionNull() {
-                this[this.tabletb_custom.telextensionColumn] = global::System.Convert.DBNull;
+            public void SetproductnumberNull() {
+                this[this.tabletb_reports.productnumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsmobilephoneNull() {
-                return this.IsNull(this.tabletb_custom.mobilephoneColumn);
+            public bool IssoftwareVersionNull() {
+                return this.IsNull(this.tabletb_reports.softwareVersionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetmobilephoneNull() {
-                this[this.tabletb_custom.mobilephoneColumn] = global::System.Convert.DBNull;
+            public void SetsoftwareVersionNull() {
+                this[this.tabletb_reports.softwareVersionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsemailNull() {
-                return this.IsNull(this.tabletb_custom.emailColumn);
+            public bool IserrorcodeNull() {
+                return this.IsNull(this.tabletb_reports.errorcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetemailNull() {
-                this[this.tabletb_custom.emailColumn] = global::System.Convert.DBNull;
+            public void SeterrorcodeNull() {
+                this[this.tabletb_reports.errorcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsqqNull() {
-                return this.IsNull(this.tabletb_custom.qqColumn);
+            public bool IsbreakdowndescriptionNull() {
+                return this.IsNull(this.tabletb_reports.breakdowndescriptionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetqqNull() {
-                this[this.tabletb_custom.qqColumn] = global::System.Convert.DBNull;
+            public void SetbreakdowndescriptionNull() {
+                this[this.tabletb_reports.breakdowndescriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsadditionalNull() {
-                return this.IsNull(this.tabletb_custom.additionalColumn);
+            public bool IsbreakdownreasonNull() {
+                return this.IsNull(this.tabletb_reports.breakdownreasonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetadditionalNull() {
-                this[this.tabletb_custom.additionalColumn] = global::System.Convert.DBNull;
+            public void SetbreakdownreasonNull() {
+                this[this.tabletb_reports.breakdownreasonColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsmsnNull() {
-                return this.IsNull(this.tabletb_custom.msnColumn);
+            public bool IsresultofrepairNull() {
+                return this.IsNull(this.tabletb_reports.resultofrepairColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetmsnNull() {
-                this[this.tabletb_custom.msnColumn] = global::System.Convert.DBNull;
+            public void SetresultofrepairNull() {
+                this[this.tabletb_reports.resultofrepairColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsfaxNull() {
-                return this.IsNull(this.tabletb_custom.faxColumn);
+            public bool IsstarttimeNull() {
+                return this.IsNull(this.tabletb_reports.starttimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetfaxNull() {
-                this[this.tabletb_custom.faxColumn] = global::System.Convert.DBNull;
+            public void SetstarttimeNull() {
+                this[this.tabletb_reports.starttimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsagentNull() {
-                return this.IsNull(this.tabletb_custom.agentColumn);
+            public bool IsendtimeNull() {
+                return this.IsNull(this.tabletb_reports.endtimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetagentNull() {
-                this[this.tabletb_custom.agentColumn] = global::System.Convert.DBNull;
+            public void SetendtimeNull() {
+                this[this.tabletb_reports.endtimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Istype_deliveryNull() {
+                return this.IsNull(this.tabletb_reports.type_deliveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Settype_deliveryNull() {
+                this[this.tabletb_reports.type_deliveryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isawbnumber_deliveryNull() {
+                return this.IsNull(this.tabletb_reports.awbnumber_deliveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setawbnumber_deliveryNull() {
+                this[this.tabletb_reports.awbnumber_deliveryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Istime_deliveryNull() {
+                return this.IsNull(this.tabletb_reports.time_deliveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Settime_deliveryNull() {
+                this[this.tabletb_reports.time_deliveryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1052,20 +1239,20 @@ namespace AfterSaleServiceSystem.DAL {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class tb_customRowChangeEvent : global::System.EventArgs {
+        public class tb_reportsRowChangeEvent : global::System.EventArgs {
             
-            private tb_customRow eventRow;
+            private tb_reportsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRowChangeEvent(tb_customRow row, global::System.Data.DataRowAction action) {
+            public tb_reportsRowChangeEvent(tb_reportsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_customRow Row {
+            public tb_reportsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1080,7 +1267,7 @@ namespace AfterSaleServiceSystem.DAL {
         }
     }
 }
-namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
+namespace AfterSaleServiceSystem.DAL.dsReportsTableAdapters {
     
     
     /// <summary>
@@ -1093,7 +1280,7 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tb_customTableAdapter : global::System.ComponentModel.Component {
+    public partial class tb_reportsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1106,7 +1293,7 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public tb_customTableAdapter() {
+        public tb_reportsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1197,64 +1384,82 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tb_custom";
+            tableMapping.DataSetTable = "tb_reports";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("company", "company");
-            tableMapping.ColumnMappings.Add("address", "address");
-            tableMapping.ColumnMappings.Add("zipcode", "zipcode");
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("telareacode", "telareacode");
-            tableMapping.ColumnMappings.Add("telephone", "telephone");
-            tableMapping.ColumnMappings.Add("telextension", "telextension");
-            tableMapping.ColumnMappings.Add("mobilephone", "mobilephone");
-            tableMapping.ColumnMappings.Add("email", "email");
-            tableMapping.ColumnMappings.Add("qq", "qq");
-            tableMapping.ColumnMappings.Add("additional", "additional");
-            tableMapping.ColumnMappings.Add("msn", "msn");
-            tableMapping.ColumnMappings.Add("fax", "fax");
-            tableMapping.ColumnMappings.Add("agent", "agent");
+            tableMapping.ColumnMappings.Add("clerkid", "clerkid");
+            tableMapping.ColumnMappings.Add("repairsheetid", "repairsheetid");
+            tableMapping.ColumnMappings.Add("warrantyperiod", "warrantyperiod");
+            tableMapping.ColumnMappings.Add("modifytime", "modifytime");
+            tableMapping.ColumnMappings.Add("productname", "productname");
+            tableMapping.ColumnMappings.Add("productnumber", "productnumber");
+            tableMapping.ColumnMappings.Add("softwareVersion", "softwareVersion");
+            tableMapping.ColumnMappings.Add("errorcode", "errorcode");
+            tableMapping.ColumnMappings.Add("breakdowndescription", "breakdowndescription");
+            tableMapping.ColumnMappings.Add("breakdownreason", "breakdownreason");
+            tableMapping.ColumnMappings.Add("resultofrepair", "resultofrepair");
+            tableMapping.ColumnMappings.Add("laborcost", "laborcost");
+            tableMapping.ColumnMappings.Add("partcost", "partcost");
+            tableMapping.ColumnMappings.Add("testcost", "testcost");
+            tableMapping.ColumnMappings.Add("transitcost", "transitcost");
+            tableMapping.ColumnMappings.Add("starttime", "starttime");
+            tableMapping.ColumnMappings.Add("endtime", "endtime");
+            tableMapping.ColumnMappings.Add("type_delivery", "type_delivery");
+            tableMapping.ColumnMappings.Add("awbnumber_delivery", "awbnumber_delivery");
+            tableMapping.ColumnMappings.Add("time_delivery", "time_delivery");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tb_custom] WHERE (([id] = @Original_id))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tb_reports] WHERE (([id] = @Original_id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tb_custom] ([company], [address], [zipcode], [name], [telareacode], [telephone], [telextension], [mobilephone], [email], [qq], [additional], [msn], [fax], [agent]) VALUES (@company, @address, @zipcode, @name, @telareacode, @telephone, @telextension, @mobilephone, @email, @qq, @additional, @msn, @fax, @agent)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tb_reports] ([clerkid], [repairsheetid], [warrantyperiod], [modifytime], [productname], [productnumber], [softwareVersion], [errorcode], [breakdowndescription], [breakdownreason], [resultofrepair], [laborcost], [partcost], [testcost], [transitcost], [starttime], [endtime], [type_delivery], [awbnumber_delivery], [time_delivery]) VALUES (@clerkid, @repairsheetid, @warrantyperiod, @modifytime, @productname, @productnumber, @softwareVersion, @errorcode, @breakdowndescription, @breakdownreason, @resultofrepair, @laborcost, @partcost, @testcost, @transitcost, @starttime, @endtime, @type_delivery, @awbnumber_delivery, @time_delivery)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zipcode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zipcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telareacode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telareacode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telephone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telextension", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telextension", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mobilephone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mobilephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qq", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additional", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fax", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@agent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "agent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@repairsheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@warrantyperiod", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "warrantyperiod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@modifytime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "modifytime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productnumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@softwareVersion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "softwareVersion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@errorcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "errorcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@breakdowndescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "breakdowndescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@breakdownreason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "breakdownreason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resultofrepair", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultofrepair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@laborcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "laborcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@partcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "partcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@testcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "testcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@transitcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "transitcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@starttime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starttime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "endtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type_delivery", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@awbnumber_delivery", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "awbnumber_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@time_delivery", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "time_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tb_custom] SET [company] = @company, [address] = @address, [zipcode] = @zipcode, [name] = @name, [telareacode] = @telareacode, [telephone] = @telephone, [telextension] = @telextension, [mobilephone] = @mobilephone, [email] = @email, [qq] = @qq, [additional] = @additional, [msn] = @msn, [fax] = @fax, [agent] = @agent WHERE (([id] = @Original_id))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tb_reports] SET [clerkid] = @clerkid, [repairsheetid] = @repairsheetid, [warrantyperiod] = @warrantyperiod, [modifytime] = @modifytime, [productname] = @productname, [productnumber] = @productnumber, [softwareVersion] = @softwareVersion, [errorcode] = @errorcode, [breakdowndescription] = @breakdowndescription, [breakdownreason] = @breakdownreason, [resultofrepair] = @resultofrepair, [laborcost] = @laborcost, [partcost] = @partcost, [testcost] = @testcost, [transitcost] = @transitcost, [starttime] = @starttime, [endtime] = @endtime, [type_delivery] = @type_delivery, [awbnumber_delivery] = @awbnumber_delivery, [time_delivery] = @time_delivery WHERE (([id] = @Original_id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zipcode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zipcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telareacode", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telareacode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telephone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telextension", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telextension", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mobilephone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mobilephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qq", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@additional", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "additional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fax", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@agent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "agent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@repairsheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@warrantyperiod", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "warrantyperiod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@modifytime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "modifytime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productnumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@softwareVersion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "softwareVersion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@errorcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "errorcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@breakdowndescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "breakdowndescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@breakdownreason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "breakdownreason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resultofrepair", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultofrepair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@laborcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "laborcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@partcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "partcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@testcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "testcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@transitcost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "transitcost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@starttime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starttime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "endtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type_delivery", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@awbnumber_delivery", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "awbnumber_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@time_delivery", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "time_delivery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -1266,34 +1471,32 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, company, address, zipcode, name, telareacode, telephone, telextension," +
-                " mobilephone, email, qq, additional, msn, fax, agent FROM dbo.tb_custom";
+            this._commandCollection[0].CommandText = @"SELECT id, clerkid, repairsheetid, warrantyperiod, modifytime, productname, productnumber, softwareVersion, errorcode, breakdowndescription, breakdownreason, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery FROM dbo.tb_reports";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id, company, address, zipcode, name, telareacode, telephone, telextension," +
-                " mobilephone, email, qq, additional, msn, fax, agent FROM dbo.tb_custom where id" +
-                "= @id";
+            this._commandCollection[1].CommandText = @"SELECT id, clerkid, repairsheetid, warrantyperiod, modifytime, productname, productnumber, softwareVersion, errorcode, breakdowndescription, breakdownreason, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery FROM dbo.tb_reports where clerkid = @clerkid";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT id, company, address, zipcode, name, telareacode, telephone, telextension, mobilephone, email, qq, additional, msn, fax, agent FROM dbo.tb_custom WHERE (id =
-          (SELECT DISTINCT customid
-         FROM tb_repairsheet
-         WHERE (id = @Sheeetid)))
-";
+            this._commandCollection[2].CommandText = @"SELECT id, clerkid, repairsheetid, warrantyperiod, modifytime, productname, productnumber, softwareVersion, errorcode, breakdowndescription, breakdownreason, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery FROM dbo.tb_reports where id=@id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sheeetid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT id, clerkid, repairsheetid, warrantyperiod, modifytime, productname, productnumber, softwareVersion, errorcode, breakdowndescription, breakdownreason, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery FROM dbo.tb_reports where repairsheetid=@sheetid";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sheetid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsCustomer.tb_customDataTable dataTable) {
+        public virtual int Fill(dsReports.tb_reportsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1305,9 +1508,9 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsCustomer.tb_customDataTable GetData() {
+        public virtual dsReports.tb_reportsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsCustomer.tb_customDataTable dataTable = new dsCustomer.tb_customDataTable();
+            dsReports.tb_reportsDataTable dataTable = new dsReports.tb_reportsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1315,10 +1518,15 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsCustomer.tb_customDataTable GetDataByid(long id) {
+        public virtual dsReports.tb_reportsDataTable GetDataByclerkid(global::System.Nullable<long> clerkid) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(id));
-            dsCustomer.tb_customDataTable dataTable = new dsCustomer.tb_customDataTable();
+            if ((clerkid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(clerkid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            dsReports.tb_reportsDataTable dataTable = new dsReports.tb_reportsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1326,24 +1534,40 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsCustomer.tb_customDataTable GetDataBySheetid(long Sheeetid) {
+        public virtual dsReports.tb_reportsDataTable GetDataByid(long id) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Sheeetid));
-            dsCustomer.tb_customDataTable dataTable = new dsCustomer.tb_customDataTable();
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(id));
+            dsReports.tb_reportsDataTable dataTable = new dsReports.tb_reportsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCustomer.tb_customDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsReports.tb_reportsDataTable GetDataBysheetid(global::System.Nullable<long> sheetid) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((sheetid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(sheetid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            dsReports.tb_reportsDataTable dataTable = new dsReports.tb_reportsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsReports.tb_reportsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCustomer dataSet) {
-            return this.Adapter.Update(dataSet, "tb_custom");
+        public virtual int Update(dsReports dataSet) {
+            return this.Adapter.Update(dataSet, "tb_reports");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1383,90 +1607,121 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string company, string address, string zipcode, string name, string telareacode, string telephone, string telextension, string mobilephone, string email, string qq, string additional, string msn, string fax, string agent) {
-            if ((company == null)) {
+        public virtual int Insert(
+                    global::System.Nullable<long> clerkid, 
+                    global::System.Nullable<long> repairsheetid, 
+                    bool warrantyperiod, 
+                    global::System.Nullable<global::System.DateTime> modifytime, 
+                    string productname, 
+                    string productnumber, 
+                    string softwareVersion, 
+                    string errorcode, 
+                    string breakdowndescription, 
+                    string breakdownreason, 
+                    string resultofrepair, 
+                    decimal laborcost, 
+                    decimal partcost, 
+                    decimal testcost, 
+                    decimal transitcost, 
+                    global::System.Nullable<global::System.DateTime> starttime, 
+                    global::System.Nullable<global::System.DateTime> endtime, 
+                    string type_delivery, 
+                    string awbnumber_delivery, 
+                    global::System.Nullable<global::System.DateTime> time_delivery) {
+            if ((clerkid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((long)(clerkid.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(company));
+            if ((repairsheetid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((long)(repairsheetid.Value));
             }
-            if ((address == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(address));
-            }
-            if ((zipcode == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(warrantyperiod));
+            if ((modifytime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(modifytime.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(zipcode));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((name == null)) {
-                throw new global::System.ArgumentNullException("name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(name));
-            }
-            if ((telareacode == null)) {
+            if ((productname == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(telareacode));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(productname));
             }
-            if ((telephone == null)) {
+            if ((productnumber == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(telephone));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(productnumber));
             }
-            if ((telextension == null)) {
+            if ((softwareVersion == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(telextension));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(softwareVersion));
             }
-            if ((mobilephone == null)) {
+            if ((errorcode == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(mobilephone));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(errorcode));
             }
-            if ((email == null)) {
+            if ((breakdowndescription == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(email));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(breakdowndescription));
             }
-            if ((qq == null)) {
+            if ((breakdownreason == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(qq));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(breakdownreason));
             }
-            if ((additional == null)) {
+            if ((resultofrepair == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(additional));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(resultofrepair));
             }
-            if ((msn == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(msn));
-            }
-            if ((fax == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(laborcost));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(partcost));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(testcost));
+            this.Adapter.InsertCommand.Parameters[14].Value = ((decimal)(transitcost));
+            if ((starttime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((System.DateTime)(starttime.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(fax));
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((agent == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((endtime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(endtime.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(agent));
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((type_delivery == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(type_delivery));
+            }
+            if ((awbnumber_delivery == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(awbnumber_delivery));
+            }
+            if ((time_delivery.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((System.DateTime)(time_delivery.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1487,92 +1742,124 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string company, string address, string zipcode, string name, string telareacode, string telephone, string telextension, string mobilephone, string email, string qq, string additional, string msn, string fax, string agent, long Original_id) {
-            if ((company == null)) {
+        public virtual int Update(
+                    global::System.Nullable<long> clerkid, 
+                    global::System.Nullable<long> repairsheetid, 
+                    bool warrantyperiod, 
+                    global::System.Nullable<global::System.DateTime> modifytime, 
+                    string productname, 
+                    string productnumber, 
+                    string softwareVersion, 
+                    string errorcode, 
+                    string breakdowndescription, 
+                    string breakdownreason, 
+                    string resultofrepair, 
+                    decimal laborcost, 
+                    decimal partcost, 
+                    decimal testcost, 
+                    decimal transitcost, 
+                    global::System.Nullable<global::System.DateTime> starttime, 
+                    global::System.Nullable<global::System.DateTime> endtime, 
+                    string type_delivery, 
+                    string awbnumber_delivery, 
+                    global::System.Nullable<global::System.DateTime> time_delivery, 
+                    long Original_id) {
+            if ((clerkid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(clerkid.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(company));
+            if ((repairsheetid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(repairsheetid.Value));
             }
-            if ((address == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(address));
-            }
-            if ((zipcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(warrantyperiod));
+            if ((modifytime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(modifytime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(zipcode));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((name == null)) {
-                throw new global::System.ArgumentNullException("name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(name));
-            }
-            if ((telareacode == null)) {
+            if ((productname == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(telareacode));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(productname));
             }
-            if ((telephone == null)) {
+            if ((productnumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(telephone));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(productnumber));
             }
-            if ((telextension == null)) {
+            if ((softwareVersion == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(telextension));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(softwareVersion));
             }
-            if ((mobilephone == null)) {
+            if ((errorcode == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(mobilephone));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(errorcode));
             }
-            if ((email == null)) {
+            if ((breakdowndescription == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(email));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(breakdowndescription));
             }
-            if ((qq == null)) {
+            if ((breakdownreason == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(qq));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(breakdownreason));
             }
-            if ((additional == null)) {
+            if ((resultofrepair == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(additional));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(resultofrepair));
             }
-            if ((msn == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(msn));
-            }
-            if ((fax == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(laborcost));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(partcost));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(testcost));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(transitcost));
+            if ((starttime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(starttime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(fax));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((agent == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((endtime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(endtime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(agent));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(Original_id));
+            if ((type_delivery == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(type_delivery));
+            }
+            if ((awbnumber_delivery == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(awbnumber_delivery));
+            }
+            if ((time_delivery.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(time_delivery.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((long)(Original_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1603,7 +1890,7 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private tb_customTableAdapter _tb_customTableAdapter;
+        private tb_reportsTableAdapter _tb_reportsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1623,12 +1910,12 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" +
             "", "System.Drawing.Design.UITypeEditor")]
-        public tb_customTableAdapter tb_customTableAdapter {
+        public tb_reportsTableAdapter tb_reportsTableAdapter {
             get {
-                return this._tb_customTableAdapter;
+                return this._tb_reportsTableAdapter;
             }
             set {
-                this._tb_customTableAdapter = value;
+                this._tb_reportsTableAdapter = value;
             }
         }
         
@@ -1649,9 +1936,9 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tb_customTableAdapter != null) 
-                            && (this._tb_customTableAdapter.Connection != null))) {
-                    return this._tb_customTableAdapter.Connection;
+                if (((this._tb_reportsTableAdapter != null) 
+                            && (this._tb_reportsTableAdapter.Connection != null))) {
+                    return this._tb_reportsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1665,7 +1952,7 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tb_customTableAdapter != null)) {
+                if ((this._tb_reportsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1676,14 +1963,14 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateUpdatedRows(dsCustomer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsReports dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_customTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_custom.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tb_reportsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_reports.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_customTableAdapter.Update(updatedRows));
+                    result = (result + this._tb_reportsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1694,13 +1981,13 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateInsertedRows(dsCustomer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsReports dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_customTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_custom.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tb_reportsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_reports.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tb_customTableAdapter.Update(addedRows));
+                    result = (result + this._tb_reportsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1711,13 +1998,13 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateDeletedRows(dsCustomer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsReports dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tb_customTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_custom.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tb_reportsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_reports.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_customTableAdapter.Update(deletedRows));
+                    result = (result + this._tb_reportsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1751,15 +2038,15 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public virtual int UpdateAll(dsCustomer dataSet) {
+        public virtual int UpdateAll(dsReports dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tb_customTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tb_customTableAdapter.Connection) == false))) {
+            if (((this._tb_reportsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tb_reportsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -1793,13 +2080,13 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tb_customTableAdapter != null)) {
-                    revertConnections.Add(this._tb_customTableAdapter, this._tb_customTableAdapter.Connection);
-                    this._tb_customTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tb_customTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tb_customTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tb_customTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_customTableAdapter.Adapter);
+                if ((this._tb_reportsTableAdapter != null)) {
+                    revertConnections.Add(this._tb_reportsTableAdapter, this._tb_reportsTableAdapter.Connection);
+                    this._tb_reportsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tb_reportsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tb_reportsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tb_reportsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_reportsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1860,9 +2147,9 @@ namespace AfterSaleServiceSystem.DAL.dsCustomerTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tb_customTableAdapter != null)) {
-                    this._tb_customTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_customTableAdapter]));
-                    this._tb_customTableAdapter.Transaction = null;
+                if ((this._tb_reportsTableAdapter != null)) {
+                    this._tb_reportsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_reportsTableAdapter]));
+                    this._tb_reportsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

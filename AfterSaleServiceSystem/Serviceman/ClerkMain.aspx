@@ -50,7 +50,7 @@
             <ItemTemplate>
                 <tr align="center">
                     <td>
-                        <a href='/Serviceman/SheetDetail.aspx?id=<%# Eval("id") %>'>
+                        <a href='/Serviceman/SheetDetail2.aspx?id=<%# Eval("id") %>'>
                             <asp:Label ID="guidLabel" runat="server" Text='<%# Eval("guid") %>' /></a>
                     </td>
                     <td>

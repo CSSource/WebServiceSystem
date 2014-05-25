@@ -21,16 +21,16 @@ namespace AfterSaleServiceSystem.DAL {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsLogs")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dspartchange")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsLogs : global::System.Data.DataSet {
+    public partial class dspartchange : global::System.Data.DataSet {
         
-        private tb_logsDataTable tabletb_logs;
+        private tb_partchangeDataTable tabletb_partchange;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public dsLogs() {
+        public dspartchange() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -40,7 +40,7 @@ namespace AfterSaleServiceSystem.DAL {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected dsLogs(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dspartchange(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -53,8 +53,8 @@ namespace AfterSaleServiceSystem.DAL {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tb_logs"] != null)) {
-                    base.Tables.Add(new tb_logsDataTable(ds.Tables["tb_logs"]));
+                if ((ds.Tables["tb_partchange"] != null)) {
+                    base.Tables.Add(new tb_partchangeDataTable(ds.Tables["tb_partchange"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -77,9 +77,9 @@ namespace AfterSaleServiceSystem.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tb_logsDataTable tb_logs {
+        public tb_partchangeDataTable tb_partchange {
             get {
-                return this.tabletb_logs;
+                return this.tabletb_partchange;
             }
         }
         
@@ -120,7 +120,7 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override global::System.Data.DataSet Clone() {
-            dsLogs cln = ((dsLogs)(base.Clone()));
+            dspartchange cln = ((dspartchange)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -142,8 +142,8 @@ namespace AfterSaleServiceSystem.DAL {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tb_logs"] != null)) {
-                    base.Tables.Add(new tb_logsDataTable(ds.Tables["tb_logs"]));
+                if ((ds.Tables["tb_partchange"] != null)) {
+                    base.Tables.Add(new tb_partchangeDataTable(ds.Tables["tb_partchange"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -175,27 +175,27 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         internal void InitVars(bool initTable) {
-            this.tabletb_logs = ((tb_logsDataTable)(base.Tables["tb_logs"]));
+            this.tabletb_partchange = ((tb_partchangeDataTable)(base.Tables["tb_partchange"]));
             if ((initTable == true)) {
-                if ((this.tabletb_logs != null)) {
-                    this.tabletb_logs.InitVars();
+                if ((this.tabletb_partchange != null)) {
+                    this.tabletb_partchange.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass() {
-            this.DataSetName = "dsLogs";
+            this.DataSetName = "dspartchange";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsLogs.xsd";
+            this.Namespace = "http://tempuri.org/dspartchange.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletb_logs = new tb_logsDataTable();
-            base.Tables.Add(this.tabletb_logs);
+            this.tabletb_partchange = new tb_partchangeDataTable();
+            base.Tables.Add(this.tabletb_partchange);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializetb_logs() {
+        private bool ShouldSerializetb_partchange() {
             return false;
         }
         
@@ -208,7 +208,7 @@ namespace AfterSaleServiceSystem.DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsLogs ds = new dsLogs();
+            dspartchange ds = new dspartchange();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -252,7 +252,7 @@ namespace AfterSaleServiceSystem.DAL {
             return type;
         }
         
-        public delegate void tb_logsRowChangeEventHandler(object sender, tb_logsRowChangeEvent e);
+        public delegate void tb_partchangeRowChangeEventHandler(object sender, tb_partchangeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -260,28 +260,28 @@ namespace AfterSaleServiceSystem.DAL {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tb_logsDataTable : global::System.Data.TypedTableBase<tb_logsRow> {
+        public partial class tb_partchangeDataTable : global::System.Data.TypedTableBase<tb_partchangeRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnlogdata;
+            private global::System.Data.DataColumn columnposition;
             
-            private global::System.Data.DataColumn columnlogtime;
+            private global::System.Data.DataColumn columnname;
             
-            private global::System.Data.DataColumn columnclerkid;
+            private global::System.Data.DataColumn columntype;
             
-            private global::System.Data.DataColumn columnrepairsheetid;
+            private global::System.Data.DataColumn columnreportid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsDataTable() {
-                this.TableName = "tb_logs";
+            public tb_partchangeDataTable() {
+                this.TableName = "tb_partchange";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal tb_logsDataTable(global::System.Data.DataTable table) {
+            internal tb_partchangeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -297,7 +297,7 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected tb_logsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tb_partchangeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -310,30 +310,30 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn logdataColumn {
+            public global::System.Data.DataColumn positionColumn {
                 get {
-                    return this.columnlogdata;
+                    return this.columnposition;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn logtimeColumn {
+            public global::System.Data.DataColumn nameColumn {
                 get {
-                    return this.columnlogtime;
+                    return this.columnname;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn clerkidColumn {
+            public global::System.Data.DataColumn typeColumn {
                 get {
-                    return this.columnclerkid;
+                    return this.columntype;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn repairsheetidColumn {
+            public global::System.Data.DataColumn reportidColumn {
                 get {
-                    return this.columnrepairsheetid;
+                    return this.columnreportid;
                 }
             }
             
@@ -346,138 +346,131 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRow this[int index] {
+            public tb_partchangeRow this[int index] {
                 get {
-                    return ((tb_logsRow)(this.Rows[index]));
+                    return ((tb_partchangeRow)(this.Rows[index]));
                 }
             }
             
-            public event tb_logsRowChangeEventHandler tb_logsRowChanging;
+            public event tb_partchangeRowChangeEventHandler tb_partchangeRowChanging;
             
-            public event tb_logsRowChangeEventHandler tb_logsRowChanged;
+            public event tb_partchangeRowChangeEventHandler tb_partchangeRowChanged;
             
-            public event tb_logsRowChangeEventHandler tb_logsRowDeleting;
+            public event tb_partchangeRowChangeEventHandler tb_partchangeRowDeleting;
             
-            public event tb_logsRowChangeEventHandler tb_logsRowDeleted;
+            public event tb_partchangeRowChangeEventHandler tb_partchangeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Addtb_logsRow(tb_logsRow row) {
+            public void Addtb_partchangeRow(tb_partchangeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRow Addtb_logsRow(string logdata, System.DateTime logtime, long clerkid, long repairsheetid) {
-                tb_logsRow rowtb_logsRow = ((tb_logsRow)(this.NewRow()));
+            public tb_partchangeRow Addtb_partchangeRow(string position, string name, string type, long reportid) {
+                tb_partchangeRow rowtb_partchangeRow = ((tb_partchangeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        logdata,
-                        logtime,
-                        clerkid,
-                        repairsheetid};
-                rowtb_logsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtb_logsRow);
-                return rowtb_logsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRow FindByid(long id) {
-                return ((tb_logsRow)(this.Rows.Find(new object[] {
-                            id})));
+                        position,
+                        name,
+                        type,
+                        reportid};
+                rowtb_partchangeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtb_partchangeRow);
+                return rowtb_partchangeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
-                tb_logsDataTable cln = ((tb_logsDataTable)(base.Clone()));
+                tb_partchangeDataTable cln = ((tb_partchangeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tb_logsDataTable();
+                return new tb_partchangeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnlogdata = base.Columns["logdata"];
-                this.columnlogtime = base.Columns["logtime"];
-                this.columnclerkid = base.Columns["clerkid"];
-                this.columnrepairsheetid = base.Columns["repairsheetid"];
+                this.columnposition = base.Columns["position"];
+                this.columnname = base.Columns["name"];
+                this.columntype = base.Columns["type"];
+                this.columnreportid = base.Columns["reportid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnlogdata = new global::System.Data.DataColumn("logdata", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlogdata);
-                this.columnlogtime = new global::System.Data.DataColumn("logtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlogtime);
-                this.columnclerkid = new global::System.Data.DataColumn("clerkid", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnclerkid);
-                this.columnrepairsheetid = new global::System.Data.DataColumn("repairsheetid", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrepairsheetid);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
+                this.columnposition = new global::System.Data.DataColumn("position", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnposition);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype);
+                this.columnreportid = new global::System.Data.DataColumn("reportid", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreportid);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
-                this.columnlogdata.MaxLength = 2147483647;
+                this.columnposition.MaxLength = 2147483647;
+                this.columnname.MaxLength = 2147483647;
+                this.columntype.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRow Newtb_logsRow() {
-                return ((tb_logsRow)(this.NewRow()));
+            public tb_partchangeRow Newtb_partchangeRow() {
+                return ((tb_partchangeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tb_logsRow(builder);
+                return new tb_partchangeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
-                return typeof(tb_logsRow);
+                return typeof(tb_partchangeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tb_logsRowChanged != null)) {
-                    this.tb_logsRowChanged(this, new tb_logsRowChangeEvent(((tb_logsRow)(e.Row)), e.Action));
+                if ((this.tb_partchangeRowChanged != null)) {
+                    this.tb_partchangeRowChanged(this, new tb_partchangeRowChangeEvent(((tb_partchangeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tb_logsRowChanging != null)) {
-                    this.tb_logsRowChanging(this, new tb_logsRowChangeEvent(((tb_logsRow)(e.Row)), e.Action));
+                if ((this.tb_partchangeRowChanging != null)) {
+                    this.tb_partchangeRowChanging(this, new tb_partchangeRowChangeEvent(((tb_partchangeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tb_logsRowDeleted != null)) {
-                    this.tb_logsRowDeleted(this, new tb_logsRowChangeEvent(((tb_logsRow)(e.Row)), e.Action));
+                if ((this.tb_partchangeRowDeleted != null)) {
+                    this.tb_partchangeRowDeleted(this, new tb_partchangeRowChangeEvent(((tb_partchangeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tb_logsRowDeleting != null)) {
-                    this.tb_logsRowDeleting(this, new tb_logsRowChangeEvent(((tb_logsRow)(e.Row)), e.Action));
+                if ((this.tb_partchangeRowDeleting != null)) {
+                    this.tb_partchangeRowDeleting(this, new tb_partchangeRowChangeEvent(((tb_partchangeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Removetb_logsRow(tb_logsRow row) {
+            public void Removetb_partchangeRow(tb_partchangeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -485,7 +478,7 @@ namespace AfterSaleServiceSystem.DAL {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsLogs ds = new dsLogs();
+                dspartchange ds = new dspartchange();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -503,7 +496,7 @@ namespace AfterSaleServiceSystem.DAL {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tb_logsDataTable";
+                attribute2.FixedValue = "tb_partchangeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -548,124 +541,124 @@ namespace AfterSaleServiceSystem.DAL {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class tb_logsRow : global::System.Data.DataRow {
+        public partial class tb_partchangeRow : global::System.Data.DataRow {
             
-            private tb_logsDataTable tabletb_logs;
+            private tb_partchangeDataTable tabletb_partchange;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal tb_logsRow(global::System.Data.DataRowBuilder rb) : 
+            internal tb_partchangeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletb_logs = ((tb_logsDataTable)(this.Table));
+                this.tabletb_partchange = ((tb_partchangeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public long id {
                 get {
-                    return ((long)(this[this.tabletb_logs.idColumn]));
+                    return ((long)(this[this.tabletb_partchange.idColumn]));
                 }
                 set {
-                    this[this.tabletb_logs.idColumn] = value;
+                    this[this.tabletb_partchange.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string logdata {
+            public string position {
                 get {
                     try {
-                        return ((string)(this[this.tabletb_logs.logdataColumn]));
+                        return ((string)(this[this.tabletb_partchange.positionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_logs”中列“logdata”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_partchange”中列“position”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_logs.logdataColumn] = value;
+                    this[this.tabletb_partchange.positionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime logtime {
+            public string name {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabletb_logs.logtimeColumn]));
+                        return ((string)(this[this.tabletb_partchange.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_logs”中列“logtime”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_partchange”中列“name”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_logs.logtimeColumn] = value;
+                    this[this.tabletb_partchange.nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public long clerkid {
+            public string type {
                 get {
                     try {
-                        return ((long)(this[this.tabletb_logs.clerkidColumn]));
+                        return ((string)(this[this.tabletb_partchange.typeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_logs”中列“clerkid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_partchange”中列“type”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_logs.clerkidColumn] = value;
+                    this[this.tabletb_partchange.typeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public long repairsheetid {
+            public long reportid {
                 get {
                     try {
-                        return ((long)(this[this.tabletb_logs.repairsheetidColumn]));
+                        return ((long)(this[this.tabletb_partchange.reportidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“tb_logs”中列“repairsheetid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“tb_partchange”中列“reportid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tabletb_logs.repairsheetidColumn] = value;
+                    this[this.tabletb_partchange.reportidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IslogdataNull() {
-                return this.IsNull(this.tabletb_logs.logdataColumn);
+            public bool IspositionNull() {
+                return this.IsNull(this.tabletb_partchange.positionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetlogdataNull() {
-                this[this.tabletb_logs.logdataColumn] = global::System.Convert.DBNull;
+            public void SetpositionNull() {
+                this[this.tabletb_partchange.positionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IslogtimeNull() {
-                return this.IsNull(this.tabletb_logs.logtimeColumn);
+            public bool IsnameNull() {
+                return this.IsNull(this.tabletb_partchange.nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetlogtimeNull() {
-                this[this.tabletb_logs.logtimeColumn] = global::System.Convert.DBNull;
+            public void SetnameNull() {
+                this[this.tabletb_partchange.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsclerkidNull() {
-                return this.IsNull(this.tabletb_logs.clerkidColumn);
+            public bool IstypeNull() {
+                return this.IsNull(this.tabletb_partchange.typeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetclerkidNull() {
-                this[this.tabletb_logs.clerkidColumn] = global::System.Convert.DBNull;
+            public void SettypeNull() {
+                this[this.tabletb_partchange.typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsrepairsheetidNull() {
-                return this.IsNull(this.tabletb_logs.repairsheetidColumn);
+            public bool IsreportidNull() {
+                return this.IsNull(this.tabletb_partchange.reportidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetrepairsheetidNull() {
-                this[this.tabletb_logs.repairsheetidColumn] = global::System.Convert.DBNull;
+            public void SetreportidNull() {
+                this[this.tabletb_partchange.reportidColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -673,20 +666,20 @@ namespace AfterSaleServiceSystem.DAL {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class tb_logsRowChangeEvent : global::System.EventArgs {
+        public class tb_partchangeRowChangeEvent : global::System.EventArgs {
             
-            private tb_logsRow eventRow;
+            private tb_partchangeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRowChangeEvent(tb_logsRow row, global::System.Data.DataRowAction action) {
+            public tb_partchangeRowChangeEvent(tb_partchangeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_logsRow Row {
+            public tb_partchangeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -701,7 +694,7 @@ namespace AfterSaleServiceSystem.DAL {
         }
     }
 }
-namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
+namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
     
     
     /// <summary>
@@ -714,7 +707,7 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tb_logsTableAdapter : global::System.ComponentModel.Component {
+    public partial class tb_partchangeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -727,7 +720,7 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public tb_logsTableAdapter() {
+        public tb_partchangeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -818,37 +811,22 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tb_logs";
+            tableMapping.DataSetTable = "tb_partchange";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("logdata", "logdata");
-            tableMapping.ColumnMappings.Add("logtime", "logtime");
-            tableMapping.ColumnMappings.Add("clerkid", "clerkid");
-            tableMapping.ColumnMappings.Add("repairsheetid", "repairsheetid");
+            tableMapping.ColumnMappings.Add("position", "position");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("type", "type");
+            tableMapping.ColumnMappings.Add("reportid", "reportid");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tb_logs] WHERE (([id] = @Original_id))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tb_logs] ([logdata], [logtime], [clerkid], [repairsheetid]) VA" +
-                "LUES (@logdata, @logtime, @clerkid, @repairsheetid)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tb_partchange] ([position], [name], [type], [reportid]) VALUES" +
+                " (@position, @name, @type, @reportid)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logdata", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "logdata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "logtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@repairsheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tb_logs] SET [logdata] = @logdata, [logtime] = @logtime, [clerkid] " +
-                "= @clerkid, [repairsheetid] = @repairsheetid WHERE (([id] = @Original_id))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logdata", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "logdata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "logtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@repairsheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@reportid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "reportid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -859,35 +837,29 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, logdata, logtime, clerkid, repairsheetid FROM dbo.tb_logs";
+            this._commandCollection[0].CommandText = "SELECT id, position, name, type, reportid FROM dbo.tb_partchange";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id, logdata, logtime, clerkid, repairsheetid FROM dbo.tb_logs\r\nwhere clerk" +
-                "id=@clerkid\r\norder by logtime ";
+            this._commandCollection[1].CommandText = "SELECT   id, position, name, type, reportid\r\nFROM      tb_partchange\r\nWHERE   (id" +
+                " = @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clerkid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "clerkid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT id, logdata, logtime, clerkid, repairsheetid FROM dbo.tb_logs\r\nwhere id = " +
-                "@id";
+            this._commandCollection[2].CommandText = "SELECT id, position, name, type, reportid FROM dbo.tb_partchange where  reportid " +
+                "= @reportid";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT id, logdata, logtime, clerkid, repairsheetid\r\nFROM tb_logs\r\nWHERE (repairs" +
-                "heetid =@Sheeetid)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sheeetid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "repairsheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@reportid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "reportid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsLogs.tb_logsDataTable dataTable) {
+        public virtual int Fill(dspartchange.tb_partchangeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -899,9 +871,9 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsLogs.tb_logsDataTable GetData() {
+        public virtual dspartchange.tb_partchangeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsLogs.tb_logsDataTable dataTable = new dsLogs.tb_logsDataTable();
+            dspartchange.tb_partchangeDataTable dataTable = new dspartchange.tb_partchangeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -909,26 +881,10 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsLogs.tb_logsDataTable GetDataByClerkid(global::System.Nullable<long> clerkid) {
+        public virtual dspartchange.tb_partchangeDataTable GetDataByid(long id) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((clerkid.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(clerkid.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            dsLogs.tb_logsDataTable dataTable = new dsLogs.tb_logsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsLogs.tb_logsDataTable GetDataByid(long id) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((long)(id));
-            dsLogs.tb_logsDataTable dataTable = new dsLogs.tb_logsDataTable();
+            dspartchange.tb_partchangeDataTable dataTable = new dspartchange.tb_partchangeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -936,29 +892,29 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsLogs.tb_logsDataTable GetDataBySheetid(global::System.Nullable<long> Sheeetid) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((Sheeetid.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(Sheeetid.Value));
+        public virtual dspartchange.tb_partchangeDataTable GetDataByReportid(global::System.Nullable<long> reportid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((reportid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(reportid.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            dsLogs.tb_logsDataTable dataTable = new dsLogs.tb_logsDataTable();
+            dspartchange.tb_partchangeDataTable dataTable = new dspartchange.tb_partchangeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsLogs.tb_logsDataTable dataTable) {
+        public virtual int Update(dspartchange.tb_partchangeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsLogs dataSet) {
-            return this.Adapter.Update(dataSet, "tb_logs");
+        public virtual int Update(dspartchange dataSet) {
+            return this.Adapter.Update(dataSet, "tb_partchange");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -976,49 +932,28 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string logdata, global::System.Nullable<global::System.DateTime> logtime, global::System.Nullable<long> clerkid, global::System.Nullable<long> repairsheetid) {
-            if ((logdata == null)) {
+        public virtual int Insert(string position, string name, string type, global::System.Nullable<long> reportid) {
+            if ((position == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(logdata));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(position));
             }
-            if ((logtime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(logtime.Value));
-            }
-            else {
+            if ((name == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((clerkid.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((long)(clerkid.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name));
+            }
+            if ((type == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((repairsheetid.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(repairsheetid.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(type));
+            }
+            if ((reportid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(reportid.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -1038,51 +973,6 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string logdata, global::System.Nullable<global::System.DateTime> logtime, global::System.Nullable<long> clerkid, global::System.Nullable<long> repairsheetid, long Original_id) {
-            if ((logdata == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(logdata));
-            }
-            if ((logtime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(logtime.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((clerkid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(clerkid.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((repairsheetid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(repairsheetid.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
     }
     
     /// <summary>
@@ -1098,7 +988,7 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private tb_logsTableAdapter _tb_logsTableAdapter;
+        private tb_partchangeTableAdapter _tb_partchangeTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1118,12 +1008,12 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" +
             "", "System.Drawing.Design.UITypeEditor")]
-        public tb_logsTableAdapter tb_logsTableAdapter {
+        public tb_partchangeTableAdapter tb_partchangeTableAdapter {
             get {
-                return this._tb_logsTableAdapter;
+                return this._tb_partchangeTableAdapter;
             }
             set {
-                this._tb_logsTableAdapter = value;
+                this._tb_partchangeTableAdapter = value;
             }
         }
         
@@ -1144,9 +1034,9 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tb_logsTableAdapter != null) 
-                            && (this._tb_logsTableAdapter.Connection != null))) {
-                    return this._tb_logsTableAdapter.Connection;
+                if (((this._tb_partchangeTableAdapter != null) 
+                            && (this._tb_partchangeTableAdapter.Connection != null))) {
+                    return this._tb_partchangeTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1160,7 +1050,7 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tb_logsTableAdapter != null)) {
+                if ((this._tb_partchangeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1171,14 +1061,14 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateUpdatedRows(dsLogs dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dspartchange dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_logsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_logs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tb_partchangeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_partchange.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_logsTableAdapter.Update(updatedRows));
+                    result = (result + this._tb_partchangeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1189,13 +1079,13 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateInsertedRows(dsLogs dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dspartchange dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_logsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_logs.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tb_partchangeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_partchange.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tb_logsTableAdapter.Update(addedRows));
+                    result = (result + this._tb_partchangeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1206,13 +1096,13 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateDeletedRows(dsLogs dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dspartchange dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tb_logsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_logs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tb_partchangeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_partchange.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_logsTableAdapter.Update(deletedRows));
+                    result = (result + this._tb_partchangeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1246,15 +1136,15 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public virtual int UpdateAll(dsLogs dataSet) {
+        public virtual int UpdateAll(dspartchange dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tb_logsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tb_logsTableAdapter.Connection) == false))) {
+            if (((this._tb_partchangeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tb_partchangeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -1288,13 +1178,13 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tb_logsTableAdapter != null)) {
-                    revertConnections.Add(this._tb_logsTableAdapter, this._tb_logsTableAdapter.Connection);
-                    this._tb_logsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tb_logsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tb_logsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tb_logsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_logsTableAdapter.Adapter);
+                if ((this._tb_partchangeTableAdapter != null)) {
+                    revertConnections.Add(this._tb_partchangeTableAdapter, this._tb_partchangeTableAdapter.Connection);
+                    this._tb_partchangeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tb_partchangeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tb_partchangeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tb_partchangeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_partchangeTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1355,9 +1245,9 @@ namespace AfterSaleServiceSystem.DAL.dsLogsTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tb_logsTableAdapter != null)) {
-                    this._tb_logsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_logsTableAdapter]));
-                    this._tb_logsTableAdapter.Transaction = null;
+                if ((this._tb_partchangeTableAdapter != null)) {
+                    this._tb_partchangeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_partchangeTableAdapter]));
+                    this._tb_partchangeTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
