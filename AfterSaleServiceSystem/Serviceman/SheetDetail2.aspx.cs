@@ -43,18 +43,40 @@ namespace AfterSaleServiceSystem.Serviceman
 
         protected void FormView_report_ItemCreated(object sender, EventArgs e)
         {
+            TextBox TextBoxStartTime;
+            Literal LiteralstartTime;
+
+            TextBox TextBoxEndTime;
+            Literal LiteralEndTime;
+
+            TextBox TextBoxEdtTime;
+            Literal LiteralEdtTime;
+
+            TextBox TextBoxSendTime;
+            Literal LiteralSendTime;
+
+            Label labelclerk;
+
+
+
+
+
             if (FormView_report.CurrentMode == FormViewMode.Edit)
             {
-                TextBox TextBoxStartTime = (TextBox)FormView_report.FindControl("TextBoxStartTime");
-                Literal LiteralstartTime = (Literal)FormView_report.FindControl("LiteralstartTime");
+                TextBoxStartTime = (TextBox)FormView_report.FindControl("TextBoxStartTime");
+                LiteralstartTime = (Literal)FormView_report.FindControl("LiteralstartTime");
 
-                TextBox TextBoxEndTime = (TextBox)FormView_report.FindControl("TextBoxEndTime");
-                Literal LiteralEndTime = (Literal)FormView_report.FindControl("LiteralEndTime");
+                TextBoxEndTime = (TextBox)FormView_report.FindControl("TextBoxEndTime");
+                LiteralEndTime = (Literal)FormView_report.FindControl("LiteralEndTime");
 
-                TextBox TextBoxEdtTime = (TextBox)FormView_report.FindControl("TextBoxEdtTime");
-                Literal LiteralEdtTime = (Literal)FormView_report.FindControl("LiteralEdtTime");
+                TextBoxEdtTime = (TextBox)FormView_report.FindControl("TextBoxEdtTime");
+                LiteralEdtTime = (Literal)FormView_report.FindControl("LiteralEdtTime");
 
-                Label labelclerk = (Label)FormView_report.FindControl("labelclerk");
+                TextBoxSendTime = (TextBox)FormView_report.FindControl("TextBoxSendTime");
+                LiteralSendTime = (Literal)FormView_report.FindControl("LiteralSendTime");
+
+
+                labelclerk = (Label)FormView_report.FindControl("labelclerk");
 
 
 
@@ -71,6 +93,66 @@ namespace AfterSaleServiceSystem.Serviceman
                 if (TextBoxEdtTime != null && LiteralEdtTime != null)
                 {
                     LiteralEdtTime.Text = TextBoxEdtTime.ClientID;
+                }
+
+                if (TextBoxSendTime != null && LiteralSendTime != null)
+                {
+                    LiteralSendTime.Text = TextBoxSendTime.ClientID;
+                }
+
+                if (labelclerk != null)
+                {
+                    labelclerk.Text = "测试员";
+
+                    tb_clerkTableAdapter clerks = new tb_clerkTableAdapter();
+                    AfterSaleServiceSystem.DAL.dsClerk.tb_clerkDataTable clerktb =
+                        (AfterSaleServiceSystem.DAL.dsClerk.tb_clerkDataTable)clerks.GetDataByid(Convert.ToInt32(Session["UserId"]));
+
+                    if (clerktb.Rows.Count > 0)
+                    {
+                        AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow clerkrow =
+                            (AfterSaleServiceSystem.DAL.dsClerk.tb_clerkRow)clerktb.Rows[0];
+
+                        labelclerk.Text = clerkrow.realname;
+                    }
+                }
+
+            }
+            else if (FormView_report.CurrentMode == FormViewMode.Insert)
+            {
+                TextBoxStartTime = (TextBox)FormView_report.FindControl("TextBoxStartTimeIns");
+                LiteralstartTime = (Literal)FormView_report.FindControl("LiteralstartTimeIns");
+
+                TextBoxEndTime = (TextBox)FormView_report.FindControl("TextBoxEndTimeIns");
+                LiteralEndTime = (Literal)FormView_report.FindControl("LiteralEndTimeIns");
+
+                TextBoxEdtTime = (TextBox)FormView_report.FindControl("TextBoxEdtTimeIns");
+                LiteralEdtTime = (Literal)FormView_report.FindControl("LiteralEdtTimeIns");
+
+                TextBoxSendTime = (TextBox)FormView_report.FindControl("TextBoxSendTimeIns");
+                LiteralSendTime = (Literal)FormView_report.FindControl("LiteralSendTimeIns");
+
+                labelclerk = (Label)FormView_report.FindControl("labelclerkIns");
+
+
+                if (TextBoxStartTime != null && LiteralstartTime != null)
+                {
+                    LiteralstartTime.Text = TextBoxStartTime.ClientID;
+                }
+
+                if (TextBoxEndTime != null && LiteralEndTime != null)
+                {
+                    LiteralEndTime.Text = TextBoxEndTime.ClientID;
+                }
+
+                if (TextBoxEdtTime != null && LiteralEdtTime != null)
+                {
+                    LiteralEdtTime.Text = TextBoxEdtTime.ClientID;
+                }
+
+                if (TextBoxSendTime != null && LiteralSendTime != null)
+                {
+                    LiteralSendTime.Text = TextBoxSendTime.ClientID;
                 }
 
                 if (labelclerk != null)

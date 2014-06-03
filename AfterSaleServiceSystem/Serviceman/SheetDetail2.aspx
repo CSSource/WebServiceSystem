@@ -282,6 +282,7 @@
                         保 修 期
                     </td>
                     <td class="style-multydatatd-2zu">
+                        保内
                         <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("warrantyperiod") %>'
                             Class="TextBoxstyle" />
                     </td>
@@ -430,7 +431,13 @@
                                     发货日期
                                 </td>
                                 <td class="style-multydatatd-3zu">
-                                    <asp:TextBox ID="TextBox18" runat="server" Text='<%# Bind("time_delivery") %>' Class="TextBoxstyle" />
+                                    <asp:TextBox ID="TextBoxSendTime" runat="server" Text='<%# Bind("time_delivery") %>'
+                                        Class="TextBoxstyle" />
+
+                                    <script type="text/javascript">
+                                        $('#<asp:Literal ID="LiteralSendTime" runat="server"></asp:Literal>').datepicker();                     
+                                    </script>
+
                                 </td>
                             </tr>
                         </table>
@@ -470,6 +477,7 @@
                         保 修 期
                     </td>
                     <td class="style-multydatatd-2zu">
+                        保内
                         <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("warrantyperiod") %>'
                             Class="TextBoxstyle" />
                     </td>
@@ -477,11 +485,11 @@
                         日 期
                     </td>
                     <td class="style-multydatatd-2zu">
-                        <asp:TextBox ID="TextBoxEdtTime" runat="server" Text='<%# Bind("modifytime") %>'
+                        <asp:TextBox ID="TextBoxEdtTimeIns" runat="server" Text='<%# Bind("modifytime") %>'
                             Class="TextBoxstyle" />
 
                         <script type="text/javascript">
-                            $('#<asp:Literal ID="LiteralEdtTime" runat="server"></asp:Literal>').datepicker();                     
+                            $('#<asp:Literal ID="LiteralEdtTimeIns" runat="server"></asp:Literal>').datepicker();                     
                         </script>
 
                     </td>
@@ -572,24 +580,25 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="TextBoxStartTime" runat="server" Text='<%# Bind("starttime") %>'
+                                    <asp:TextBox ID="TextBoxStartTimeIns" runat="server" Text='<%# Bind("starttime") %>'
                                         Class="TextBoxstyle" />
 
                                     <script type="text/javascript">
-                                        $('#<asp:Literal ID="LiteralstartTime" runat="server"></asp:Literal>').datepicker();                     
+                                        $('#<asp:Literal ID="LiteralstartTimeIns" runat="server"></asp:Literal>').datepicker();                     
                                     </script>
 
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TextBoxEndTime" runat="server" Text='<%# Bind("endtime") %>' Class="TextBoxstyle" />
+                                    <asp:TextBox ID="TextBoxEndTimeIns" runat="server" Text='<%# Bind("endtime") %>'
+                                        Class="TextBoxstyle" />
 
                                     <script type="text/javascript">
-                                        $('#<asp:Literal ID="LiteralEndTime" runat="server"></asp:Literal>').datepicker();                     
+                                        $('#<asp:Literal ID="LiteralEndTimeIns" runat="server"></asp:Literal>').datepicker();                     
                                     </script>
 
                                 </td>
                                 <td>
-                                    <asp:Label ID="labelclerk" runat="server" Text='' Class="TextBoxstyle" />
+                                    <asp:Label ID="labelclerkIns" runat="server" Text='' Class="TextBoxstyle" />
                                 </td>
                             </tr>
                         </table>
@@ -618,7 +627,13 @@
                                     发货日期
                                 </td>
                                 <td class="style-multydatatd-3zu">
-                                    <asp:TextBox ID="TextBox18" runat="server" Text='<%# Bind("time_delivery") %>' Class="TextBoxstyle" />
+                                    <asp:TextBox ID="TextBoxSendTimeIns" runat="server" Text='<%# Bind("time_delivery") %>'
+                                        Class="TextBoxstyle" />
+
+                                    <script type="text/javascript">
+                                        $('#<asp:Literal ID="LiteralSendTimeIns" runat="server"></asp:Literal>').datepicker();                     
+                                    </script>
+
                                 </td>
                             </tr>
                         </table>
@@ -803,7 +818,8 @@
                 <table runat="server" align="center" width="100%">
                     <tr runat="server">
                         <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" border="1" style="" rules="all" width="100%">
+                            <table id="itemPlaceholderContainer" runat="server" border="1" style="" rules="all"
+                                width="100%">
                                 <tr runat="server" style="">
                                     <th runat="server" width="10%">
                                     </th>
