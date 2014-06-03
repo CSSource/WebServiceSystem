@@ -259,10 +259,8 @@
         </InsertParameters>
     </asp:ObjectDataSource>
     <asp:FormView ID="FormView_report" runat="server" DataKeyNames="id" DataSourceID="ObjectDataSource_report"
-        DefaultMode="Edit" CssClass="Fillstyle" 
-        OnItemCreated="FormView_report_ItemCreated" 
-        onitemupdating="FormView_report_ItemUpdating" 
-        oniteminserting="FormView_report_ItemInserting">
+        DefaultMode="Edit" CssClass="Fillstyle" OnItemCreated="FormView_report_ItemCreated"
+        OnItemUpdating="FormView_report_ItemUpdating" OnItemInserting="FormView_report_ItemInserting">
         <EditItemTemplate>
             <table style="width: 100%;" border="2">
                 <tr>
@@ -402,7 +400,7 @@
                                     </script>
 
                                 </td>
-                                <td>                                    
+                                <td>
                                     <asp:Label ID="labelclerk" runat="server" Text='' Class="TextBoxstyle" />
                                 </td>
                             </tr>
@@ -590,7 +588,7 @@
                                     </script>
 
                                 </td>
-                                <td>                                    
+                                <td>
                                     <asp:Label ID="labelclerk" runat="server" Text='' Class="TextBoxstyle" />
                                 </td>
                             </tr>
@@ -627,10 +625,6 @@
                     </td>
                 </tr>
             </table>
-
-
-
-
             <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert"
                 Text="保存" />
         </InsertItemTemplate>
@@ -730,5 +724,144 @@
             </tr>
         </table>
     </div>
-    <asp:ObjectDataSource ID="ObjectDataSource_partchange" runat="server"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource_partchange" runat="server" InsertMethod="Insert"
+        OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataBysheetid"
+        TypeName="AfterSaleServiceSystem.DAL.dspartchangeTableAdapters.tb_partchangeTableAdapter"
+        DeleteMethod="Delete" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_id" Type="Int64" />
+        </DeleteParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="position" Type="String" />
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="type" Type="String" />
+            <asp:Parameter Name="reportid" Type="Int64" />
+            <asp:Parameter Name="sheetid" Type="Int64" />
+            <asp:Parameter Name="Original_id" Type="Int64" />
+        </UpdateParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="1" Name="sheetid" QueryStringField="id" Type="Int64" />
+        </SelectParameters>
+        <InsertParameters>
+            <asp:Parameter Name="position" Type="String" />
+            <asp:Parameter Name="name" Type="String" />
+            <asp:Parameter Name="type" Type="String" />
+            <asp:Parameter Name="reportid" Type="Int64" />
+            <asp:Parameter Name="sheetid" Type="Int64" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+    <div style="border-style: solid">
+        维修更换器件：
+        <br />
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="ObjectDataSource_partchange"
+            EnableViewState="False" InsertItemPosition="LastItem" OnItemUpdating="ListView1_ItemUpdating"
+            DataKeyNames="id" OnItemInserting="ListView1_ItemInserting">
+            <ItemTemplate>
+                <tr style="">
+                    <td>
+                        <asp:LinkButton ID="DeleteButton" runat="server" CommandName="Delete">删除</asp:LinkButton>
+                        <asp:LinkButton ID="EditButton" runat="server" CommandName="Edit">编辑</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:Label ID="positionLabel" runat="server" Text='<%# Eval("position") %>' Style="align-text: center" />
+                    </td>
+                    <td>
+                        <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' Style="align-text: center" />
+                    </td>
+                    <td>
+                        <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' Style="align-text: center" />
+                    </td>
+                </tr>
+            </ItemTemplate>
+            <EmptyDataTemplate>
+                <table runat="server" style="">
+                    <tr>
+                        <td>
+                            未返回数据。
+                        </td>
+                    </tr>
+                </table>
+            </EmptyDataTemplate>
+            <InsertItemTemplate>
+                <tr style="">
+                    <td>
+                        <asp:LinkButton ID="InsertButton" runat="server" CommandName="Insert">插入</asp:LinkButton>
+                        <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel">清除</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="positionTextBox" runat="server" Text='<%# Bind("position") %>' Width="98%" />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' Width="98%" />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' Width="98%" />
+                    </td>
+                </tr>
+            </InsertItemTemplate>
+            <LayoutTemplate>
+                <table runat="server" align="center" width="100%">
+                    <tr runat="server">
+                        <td runat="server">
+                            <table id="itemPlaceholderContainer" runat="server" border="1" style="" rules="all" width="100%">
+                                <tr runat="server" style="">
+                                    <th runat="server" width="10%">
+                                    </th>
+                                    <th runat="server" width="30%">
+                                        位置
+                                    </th>
+                                    <th runat="server" width="30%">
+                                        名称
+                                    </th>
+                                    <th runat="server" width="30%">
+                                        型号
+                                    </th>
+                                </tr>
+                                <tr id="itemPlaceholder" runat="server">
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr runat="server">
+                        <td runat="server" style="">
+                        </td>
+                    </tr>
+                </table>
+            </LayoutTemplate>
+            <EditItemTemplate>
+                <tr style="">
+                    <td>
+                        <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update">更新</asp:LinkButton>
+                        <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel">取消</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="positionTextBox" runat="server" Text='<%# Bind("position") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' />
+                    </td>
+                </tr>
+            </EditItemTemplate>
+            <SelectedItemTemplate>
+                <tr style="">
+                    <td>
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="删除" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
+                    </td>
+                    <td>
+                        <asp:Label ID="positionLabel" runat="server" Text='<%# Eval("position") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                    </td>
+                </tr>
+            </SelectedItemTemplate>
+        </asp:ListView>
+    </div>
 </asp:Content>

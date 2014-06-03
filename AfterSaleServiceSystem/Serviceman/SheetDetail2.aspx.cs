@@ -112,6 +112,17 @@ namespace AfterSaleServiceSystem.Serviceman
             e.Values["productnumber"] = "";
         }
 
+        protected void ListView1_ItemUpdating(object sender, ListViewUpdateEventArgs e)
+        {
+            e.NewValues["sheetid"] = sheetid.ToString();
+        }
+
+        protected void ListView1_ItemInserting(object sender, ListViewInsertEventArgs e)
+        {
+            e.Values["sheetid"] = sheetid.ToString();
+
+        }
+
 
 
     }

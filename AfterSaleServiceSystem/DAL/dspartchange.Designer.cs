@@ -272,6 +272,8 @@ namespace AfterSaleServiceSystem.DAL {
             
             private global::System.Data.DataColumn columnreportid;
             
+            private global::System.Data.DataColumn columnsheetid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public tb_partchangeDataTable() {
                 this.TableName = "tb_partchange";
@@ -338,6 +340,13 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn sheetidColumn {
+                get {
+                    return this.columnsheetid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -366,17 +375,24 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public tb_partchangeRow Addtb_partchangeRow(string position, string name, string type, long reportid) {
+            public tb_partchangeRow Addtb_partchangeRow(string position, string name, string type, long reportid, long sheetid) {
                 tb_partchangeRow rowtb_partchangeRow = ((tb_partchangeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         position,
                         name,
                         type,
-                        reportid};
+                        reportid,
+                        sheetid};
                 rowtb_partchangeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtb_partchangeRow);
                 return rowtb_partchangeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public tb_partchangeRow FindByid(long id) {
+                return ((tb_partchangeRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -398,6 +414,7 @@ namespace AfterSaleServiceSystem.DAL {
                 this.columnname = base.Columns["name"];
                 this.columntype = base.Columns["type"];
                 this.columnreportid = base.Columns["reportid"];
+                this.columnsheetid = base.Columns["sheetid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -412,11 +429,16 @@ namespace AfterSaleServiceSystem.DAL {
                 base.Columns.Add(this.columntype);
                 this.columnreportid = new global::System.Data.DataColumn("reportid", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnreportid);
+                this.columnsheetid = new global::System.Data.DataColumn("sheetid", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsheetid);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
                 this.columnposition.MaxLength = 2147483647;
                 this.columnname.MaxLength = 2147483647;
                 this.columntype.MaxLength = 2147483647;
@@ -622,6 +644,21 @@ namespace AfterSaleServiceSystem.DAL {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public long sheetid {
+                get {
+                    try {
+                        return ((long)(this[this.tabletb_partchange.sheetidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“tb_partchange”中列“sheetid”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_partchange.sheetidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IspositionNull() {
                 return this.IsNull(this.tabletb_partchange.positionColumn);
             }
@@ -659,6 +696,16 @@ namespace AfterSaleServiceSystem.DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetreportidNull() {
                 this[this.tabletb_partchange.reportidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IssheetidNull() {
+                return this.IsNull(this.tabletb_partchange.sheetidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetsheetidNull() {
+                this[this.tabletb_partchange.sheetidColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -817,16 +864,35 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("type", "type");
             tableMapping.ColumnMappings.Add("reportid", "reportid");
+            tableMapping.ColumnMappings.Add("sheetid", "sheetid");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tb_partchange] WHERE (([id] = @Original_id))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tb_partchange] ([position], [name], [type], [reportid]) VALUES" +
-                " (@position, @name, @type, @reportid)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tb_partchange] ([position], [name], [type], [reportid], [sheet" +
+                "id]) VALUES (@position, @name, @type, @reportid, @sheetid)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@reportid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "reportid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tb_partchange] SET [position] = @position, [name] = @name, [type] =" +
+                " @type, [reportid] = @reportid, [sheetid] = @sheetid WHERE (([id] = @Original_id" +
+                "))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@reportid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "reportid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sheetid", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -837,23 +903,29 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, position, name, type, reportid FROM dbo.tb_partchange";
+            this._commandCollection[0].CommandText = "SELECT id, position, name, type, reportid, sheetid FROM dbo.tb_partchange";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT   id, position, name, type, reportid\r\nFROM      tb_partchange\r\nWHERE   (id" +
-                " = @id)";
+            this._commandCollection[1].CommandText = "SELECT id, position, name, type, reportid, sheetid FROM dbo.tb_partchange where i" +
+                "d = @id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT id, position, name, type, reportid FROM dbo.tb_partchange where  reportid " +
-                "= @reportid";
+            this._commandCollection[2].CommandText = "SELECT id, position, name, type, reportid, sheetid FROM dbo.tb_partchange where r" +
+                "eportid = @reportid";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@reportid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "reportid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT id, position, name, type, reportid, sheetid FROM dbo.tb_partchange where s" +
+                "heetid = @sheetid";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sheetid", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "sheetid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -892,10 +964,26 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dspartchange.tb_partchangeDataTable GetDataByReportid(global::System.Nullable<long> reportid) {
+        public virtual dspartchange.tb_partchangeDataTable GetDataByreportid(global::System.Nullable<long> reportid) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((reportid.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((long)(reportid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            dspartchange.tb_partchangeDataTable dataTable = new dspartchange.tb_partchangeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dspartchange.tb_partchangeDataTable GetDataBysheetid(global::System.Nullable<long> sheetid) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((sheetid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(sheetid.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -932,8 +1020,29 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(long Original_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string position, string name, string type, global::System.Nullable<long> reportid) {
+        public virtual int Insert(string position, string name, string type, global::System.Nullable<long> reportid, global::System.Nullable<long> sheetid) {
             if ((position == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -958,6 +1067,12 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
+            if ((sheetid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((long)(sheetid.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -970,6 +1085,57 @@ namespace AfterSaleServiceSystem.DAL.dspartchangeTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string position, string name, string type, global::System.Nullable<long> reportid, global::System.Nullable<long> sheetid, long Original_id) {
+            if ((position == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(position));
+            }
+            if ((name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(name));
+            }
+            if ((type == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(type));
+            }
+            if ((reportid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(reportid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((sheetid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(sheetid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
