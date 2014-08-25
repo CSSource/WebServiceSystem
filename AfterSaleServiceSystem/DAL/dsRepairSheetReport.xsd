@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRepairSheetReport" targetNamespace="http://tempuri.org/dsRepairSheetReport.xsd" xmlns:mstns="http://tempuri.org/dsRepairSheetReport.xsd" xmlns="http://tempuri.org/dsRepairSheetReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DatabaseAsssConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseAsssConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DatabaseAsssConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_SheetReportTableAdapter" GeneratorDataComponentClassName="V_SheetReportTableAdapter" Name="V_SheetReport" UserDataComponentName="V_SheetReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DatabaseAsssConnectionString (Web.config)" DbObjectName="dbo.V_SheetReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT producttype, productnumber, repairstateid, clerkid, customid, process, tbreportclerkid, warrantyperiod, modifytime, productname, tbreportproductnumber, softwareVersion, errorcode, breakdownreason, breakdowndescription, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery, guid FROM dbo.V_SheetReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="producttype" DataSetColumn="producttype" />
+              <Mapping SourceColumn="productnumber" DataSetColumn="productnumber" />
+              <Mapping SourceColumn="repairstateid" DataSetColumn="repairstateid" />
+              <Mapping SourceColumn="clerkid" DataSetColumn="clerkid" />
+              <Mapping SourceColumn="customid" DataSetColumn="customid" />
+              <Mapping SourceColumn="process" DataSetColumn="process" />
+              <Mapping SourceColumn="tbreportclerkid" DataSetColumn="tbreportclerkid" />
+              <Mapping SourceColumn="warrantyperiod" DataSetColumn="warrantyperiod" />
+              <Mapping SourceColumn="modifytime" DataSetColumn="modifytime" />
+              <Mapping SourceColumn="productname" DataSetColumn="productname" />
+              <Mapping SourceColumn="tbreportproductnumber" DataSetColumn="tbreportproductnumber" />
+              <Mapping SourceColumn="softwareVersion" DataSetColumn="softwareVersion" />
+              <Mapping SourceColumn="errorcode" DataSetColumn="errorcode" />
+              <Mapping SourceColumn="breakdownreason" DataSetColumn="breakdownreason" />
+              <Mapping SourceColumn="breakdowndescription" DataSetColumn="breakdowndescription" />
+              <Mapping SourceColumn="resultofrepair" DataSetColumn="resultofrepair" />
+              <Mapping SourceColumn="laborcost" DataSetColumn="laborcost" />
+              <Mapping SourceColumn="partcost" DataSetColumn="partcost" />
+              <Mapping SourceColumn="testcost" DataSetColumn="testcost" />
+              <Mapping SourceColumn="transitcost" DataSetColumn="transitcost" />
+              <Mapping SourceColumn="starttime" DataSetColumn="starttime" />
+              <Mapping SourceColumn="endtime" DataSetColumn="endtime" />
+              <Mapping SourceColumn="type_delivery" DataSetColumn="type_delivery" />
+              <Mapping SourceColumn="awbnumber_delivery" DataSetColumn="awbnumber_delivery" />
+              <Mapping SourceColumn="time_delivery" DataSetColumn="time_delivery" />
+              <Mapping SourceColumn="guid" DataSetColumn="guid" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DatabaseAsssConnectionString (Web.config)" DbObjectName="dbo.V_SheetReport" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByGuid" GetMethodModifier="Public" GetMethodName="GetDataByGuid" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByGuid" UserSourceName="GetDataByGuid">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT producttype, productnumber, repairstateid, clerkid, customid, process, tbreportclerkid, warrantyperiod, modifytime, productname, tbreportproductnumber, softwareVersion, errorcode, breakdownreason, breakdowndescription, resultofrepair, laborcost, partcost, testcost, transitcost, starttime, endtime, type_delivery, awbnumber_delivery, time_delivery, guid FROM dbo.V_SheetReport where guid = @guid</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="guid" ColumnName="guid" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nchar(20)" DbType="String" Direction="Input" ParameterName="@guid" Precision="0" ProviderType="NChar" Scale="0" Size="20" SourceColumn="guid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseAsssConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Update1" Modifier="Public" Name="Update1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Update1">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[V_SheetReport] SET
+[producttype] = @producttype, 
+[productnumber] = @productnumber, 
+[repairstateid] = @repairstateid, 
+[clerkid] = @clerkid, 
+[customid] = @customid, 
+[process]  = @process, 
+[tbreportclerkid] = @clerkid, 
+[warrantyperiod] = @warrantyperiod, 
+[modifytime] = @modifytime, 
+[productname] = @productname, 
+[tbreportproductnumber] = @productnumber, 
+[softwareVersion] = @softwareVersion, 
+[errorcode] = @errorcode, 
+[breakdownreason] = @breakdownreason, 
+[breakdowndescription] = @breakdowndescription, 
+[resultofrepair] = @resultofrepair, 
+[laborcost] = @laborcost, 
+[partcost] = @partcost, 
+[testcost] = @testcost, 
+[transitcost] = @transitcost, 
+[starttime] = @starttime, 
+[endtime] = @endtime, 
+[type_delivery] = @type_delivery, 
+[awbnumber_delivery] = @awbnumber_delivery, 
+[time_delivery] = @time_delivery 
+
+ where guid = @GUID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="producttype" ColumnName="producttype" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@producttype" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="producttype" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="productnumber" ColumnName="productnumber" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nchar(20)" DbType="String" Direction="Input" ParameterName="@productnumber" Precision="0" ProviderType="NChar" Scale="0" Size="20" SourceColumn="productnumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="repairstateid" ColumnName="repairstateid" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@repairstateid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="repairstateid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="clerkid" ColumnName="clerkid" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@clerkid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="clerkid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="customid" ColumnName="customid" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@customid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="customid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="process" ColumnName="process" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@process" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="process" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="warrantyperiod" ColumnName="warrantyperiod" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@warrantyperiod" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="warrantyperiod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="modifytime" ColumnName="modifytime" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@modifytime" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="modifytime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="productname" ColumnName="productname" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@productname" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="productname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="softwareVersion" ColumnName="softwareVersion" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@softwareVersion" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="softwareVersion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="errorcode" ColumnName="errorcode" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@errorcode" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="errorcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="breakdownreason" ColumnName="breakdownreason" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@breakdownreason" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="breakdownreason" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="breakdowndescription" ColumnName="breakdowndescription" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@breakdowndescription" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="breakdowndescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="resultofrepair" ColumnName="resultofrepair" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@resultofrepair" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="resultofrepair" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="laborcost" ColumnName="laborcost" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@laborcost" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="laborcost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="partcost" ColumnName="partcost" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@partcost" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="partcost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="testcost" ColumnName="testcost" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@testcost" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="testcost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="transitcost" ColumnName="transitcost" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@transitcost" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="transitcost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="starttime" ColumnName="starttime" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@starttime" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="starttime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="endtime" ColumnName="endtime" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@endtime" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="endtime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="type_delivery" ColumnName="type_delivery" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@type_delivery" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="type_delivery" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="awbnumber_delivery" ColumnName="awbnumber_delivery" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@awbnumber_delivery" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="awbnumber_delivery" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="time_delivery" ColumnName="time_delivery" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@time_delivery" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="time_delivery" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="GUID" ColumnName="guid" DataSourceName="[E:\WEBSERVICESYSTEMII\AFTERSALESERVICESYSTEM\APP_DATA\DATABASEASSS.MDF].dbo.V_SheetReport" DataTypeServer="nchar(20)" DbType="String" Direction="Input" ParameterName="@GUID" Precision="0" ProviderType="NChar" Scale="0" Size="20" SourceColumn="guid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRepairSheetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsRepairSheetReport" msprop:Generator_DataSetName="dsRepairSheetReport" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_SheetReport" msprop:Generator_UserTableName="V_SheetReport" msprop:Generator_RowDeletedName="V_SheetReportRowDeleted" msprop:Generator_RowChangedName="V_SheetReportRowChanged" msprop:Generator_RowClassName="V_SheetReportRow" msprop:Generator_RowChangingName="V_SheetReportRowChanging" msprop:Generator_RowEvArgName="V_SheetReportRowChangeEvent" msprop:Generator_RowEvHandlerName="V_SheetReportRowChangeEventHandler" msprop:Generator_TableClassName="V_SheetReportDataTable" msprop:Generator_TableVarName="tableV_SheetReport" msprop:Generator_RowDeletingName="V_SheetReportRowDeleting" msprop:Generator_TablePropName="V_SheetReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producttype" msprop:Generator_UserColumnName="producttype" msprop:Generator_ColumnVarNameInTable="columnproducttype" msprop:Generator_ColumnPropNameInRow="producttype" msprop:Generator_ColumnPropNameInTable="producttypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="productnumber" msprop:Generator_UserColumnName="productnumber" msprop:Generator_ColumnVarNameInTable="columnproductnumber" msprop:Generator_ColumnPropNameInRow="productnumber" msprop:Generator_ColumnPropNameInTable="productnumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="repairstateid" msprop:Generator_UserColumnName="repairstateid" msprop:Generator_ColumnVarNameInTable="columnrepairstateid" msprop:Generator_ColumnPropNameInRow="repairstateid" msprop:Generator_ColumnPropNameInTable="repairstateidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="clerkid" msprop:Generator_UserColumnName="clerkid" msprop:Generator_ColumnVarNameInTable="columnclerkid" msprop:Generator_ColumnPropNameInRow="clerkid" msprop:Generator_ColumnPropNameInTable="clerkidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="customid" msprop:Generator_UserColumnName="customid" msprop:Generator_ColumnVarNameInTable="columncustomid" msprop:Generator_ColumnPropNameInRow="customid" msprop:Generator_ColumnPropNameInTable="customidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="process" msprop:Generator_UserColumnName="process" msprop:Generator_ColumnVarNameInTable="columnprocess" msprop:Generator_ColumnPropNameInRow="process" msprop:Generator_ColumnPropNameInTable="processColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="tbreportclerkid" msprop:Generator_UserColumnName="tbreportclerkid" msprop:Generator_ColumnVarNameInTable="columntbreportclerkid" msprop:Generator_ColumnPropNameInRow="tbreportclerkid" msprop:Generator_ColumnPropNameInTable="tbreportclerkidColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="warrantyperiod" msprop:Generator_UserColumnName="warrantyperiod" msprop:Generator_ColumnVarNameInTable="columnwarrantyperiod" msprop:Generator_ColumnPropNameInRow="warrantyperiod" msprop:Generator_ColumnPropNameInTable="warrantyperiodColumn" type="xs:boolean" />
+              <xs:element name="modifytime" msprop:Generator_UserColumnName="modifytime" msprop:Generator_ColumnVarNameInTable="columnmodifytime" msprop:Generator_ColumnPropNameInRow="modifytime" msprop:Generator_ColumnPropNameInTable="modifytimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="productname" msprop:Generator_UserColumnName="productname" msprop:Generator_ColumnVarNameInTable="columnproductname" msprop:Generator_ColumnPropNameInRow="productname" msprop:Generator_ColumnPropNameInTable="productnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tbreportproductnumber" msprop:Generator_UserColumnName="tbreportproductnumber" msprop:Generator_ColumnVarNameInTable="columntbreportproductnumber" msprop:Generator_ColumnPropNameInRow="tbreportproductnumber" msprop:Generator_ColumnPropNameInTable="tbreportproductnumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="softwareVersion" msprop:Generator_UserColumnName="softwareVersion" msprop:Generator_ColumnVarNameInTable="columnsoftwareVersion" msprop:Generator_ColumnPropNameInRow="softwareVersion" msprop:Generator_ColumnPropNameInTable="softwareVersionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="errorcode" msprop:Generator_UserColumnName="errorcode" msprop:Generator_ColumnVarNameInTable="columnerrorcode" msprop:Generator_ColumnPropNameInRow="errorcode" msprop:Generator_ColumnPropNameInTable="errorcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="breakdownreason" msprop:Generator_UserColumnName="breakdownreason" msprop:Generator_ColumnVarNameInTable="columnbreakdownreason" msprop:Generator_ColumnPropNameInRow="breakdownreason" msprop:Generator_ColumnPropNameInTable="breakdownreasonColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="breakdowndescription" msprop:Generator_UserColumnName="breakdowndescription" msprop:Generator_ColumnVarNameInTable="columnbreakdowndescription" msprop:Generator_ColumnPropNameInRow="breakdowndescription" msprop:Generator_ColumnPropNameInTable="breakdowndescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="resultofrepair" msprop:Generator_UserColumnName="resultofrepair" msprop:Generator_ColumnVarNameInTable="columnresultofrepair" msprop:Generator_ColumnPropNameInRow="resultofrepair" msprop:Generator_ColumnPropNameInTable="resultofrepairColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="laborcost" msprop:Generator_UserColumnName="laborcost" msprop:Generator_ColumnVarNameInTable="columnlaborcost" msprop:Generator_ColumnPropNameInRow="laborcost" msprop:Generator_ColumnPropNameInTable="laborcostColumn" type="xs:decimal" />
+              <xs:element name="partcost" msprop:Generator_UserColumnName="partcost" msprop:Generator_ColumnVarNameInTable="columnpartcost" msprop:Generator_ColumnPropNameInRow="partcost" msprop:Generator_ColumnPropNameInTable="partcostColumn" type="xs:decimal" />
+              <xs:element name="testcost" msprop:Generator_UserColumnName="testcost" msprop:Generator_ColumnVarNameInTable="columntestcost" msprop:Generator_ColumnPropNameInRow="testcost" msprop:Generator_ColumnPropNameInTable="testcostColumn" type="xs:decimal" />
+              <xs:element name="transitcost" msprop:Generator_UserColumnName="transitcost" msprop:Generator_ColumnVarNameInTable="columntransitcost" msprop:Generator_ColumnPropNameInRow="transitcost" msprop:Generator_ColumnPropNameInTable="transitcostColumn" type="xs:decimal" />
+              <xs:element name="starttime" msprop:Generator_UserColumnName="starttime" msprop:Generator_ColumnVarNameInTable="columnstarttime" msprop:Generator_ColumnPropNameInRow="starttime" msprop:Generator_ColumnPropNameInTable="starttimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="endtime" msprop:Generator_UserColumnName="endtime" msprop:Generator_ColumnVarNameInTable="columnendtime" msprop:Generator_ColumnPropNameInRow="endtime" msprop:Generator_ColumnPropNameInTable="endtimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="type_delivery" msprop:Generator_UserColumnName="type_delivery" msprop:Generator_ColumnVarNameInTable="columntype_delivery" msprop:Generator_ColumnPropNameInRow="type_delivery" msprop:Generator_ColumnPropNameInTable="type_deliveryColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="awbnumber_delivery" msprop:Generator_UserColumnName="awbnumber_delivery" msprop:Generator_ColumnVarNameInTable="columnawbnumber_delivery" msprop:Generator_ColumnPropNameInRow="awbnumber_delivery" msprop:Generator_ColumnPropNameInTable="awbnumber_deliveryColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="time_delivery" msprop:Generator_UserColumnName="time_delivery" msprop:Generator_ColumnVarNameInTable="columntime_delivery" msprop:Generator_ColumnPropNameInRow="time_delivery" msprop:Generator_ColumnPropNameInTable="time_deliveryColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="guid" msprop:Generator_UserColumnName="guid" msprop:Generator_ColumnVarNameInTable="columnguid" msprop:Generator_ColumnPropNameInRow="guid" msprop:Generator_ColumnPropNameInTable="guidColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
