@@ -15,7 +15,7 @@ namespace AfterSaleServiceSystem.Serviceman
     {
         protected override void OnLoadComplete(EventArgs e)
         {
-            if (Context.Session["UserId"] == null || Context.Session["UserId"] == string.Empty || Convert.ToInt32(Context.Session["UserId"]) != 1)
+            if (Context.Session["UserId"] == null || Context.Session["UserId"] == string.Empty || Convert.ToInt32(Context.Session["authorityid"]) != 1)
             {
                 //用户未登录，重定向到登录页面
                 this.Response.Redirect(MapPath("~/LogIn.ashx"));
@@ -85,7 +85,7 @@ namespace AfterSaleServiceSystem.Serviceman
 
                 tb_repairsheetTableAdapter repairsheetTableAdapter = new tb_repairsheetTableAdapter();
 
-                DataRowCollection Rows = repairsheetTableAdapter.GetDataByGuid(sguid).Rows;
+                DataRowCollection Rows = repairsheetTableAdapter.GetDataByGUID(sguid).Rows;
 
                 if (Rows.Count > 0)
                 {

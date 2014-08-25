@@ -5,126 +5,118 @@
     <title>维修单列表</title>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderContent" runat="server">
-<p>  按维修人员筛选
-    <asp:DropDownList ID="DropDownList1" runat="server" 
-        DataSourceID="ObjectDataSource1" DataTextField="username" 
-        DataValueField="id" 
-        onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
-        AutoPostBack="True">
-    </asp:DropDownList>
-    按客户公司筛选
-    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" 
-        DataSourceID="ObjectDataSource_custom" DataTextField="company" 
-        DataValueField="id" onselectedindexchanged="DropDownList2_SelectedIndexChanged">
-    </asp:DropDownList>
-    按维修状态筛选
-    <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" 
-        DataSourceID="ObjectDataSource_repairstate" DataTextField="description" 
-        DataValueField="id" onselectedindexchanged="DropDownList3_SelectedIndexChanged">
-    </asp:DropDownList>
-    <asp:ObjectDataSource ID="ObjectDataSource_repairstate" runat="server" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="AfterSaleServiceSystem.DAL.dsRepairStateTableAdapters.tb_repairstateTableAdapter">
-    </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ObjectDataSource_custom" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="AfterSaleServiceSystem.DAL.dsCustomerTableAdapters.tb_customTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_id" Type="Int64" />
-        </DeleteParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="company" Type="String" />
-            <asp:Parameter Name="address" Type="String" />
-            <asp:Parameter Name="zipcode" Type="String" />
-            <asp:Parameter Name="name" Type="String" />
-            <asp:Parameter Name="telareacode" Type="String" />
-            <asp:Parameter Name="telephone" Type="String" />
-            <asp:Parameter Name="telextension" Type="String" />
-            <asp:Parameter Name="mobilephone" Type="String" />
-            <asp:Parameter Name="email" Type="String" />
-            <asp:Parameter Name="qq" Type="String" />
-            <asp:Parameter Name="additional" Type="String" />
-            <asp:Parameter Name="msn" Type="String" />
-            <asp:Parameter Name="Original_id" Type="Int64" />
-        </UpdateParameters>
-        <InsertParameters>
-            <asp:Parameter Name="company" Type="String" />
-            <asp:Parameter Name="address" Type="String" />
-            <asp:Parameter Name="zipcode" Type="String" />
-            <asp:Parameter Name="name" Type="String" />
-            <asp:Parameter Name="telareacode" Type="String" />
-            <asp:Parameter Name="telephone" Type="String" />
-            <asp:Parameter Name="telextension" Type="String" />
-            <asp:Parameter Name="mobilephone" Type="String" />
-            <asp:Parameter Name="email" Type="String" />
-            <asp:Parameter Name="qq" Type="String" />
-            <asp:Parameter Name="additional" Type="String" />
-            <asp:Parameter Name="msn" Type="String" />
-        </InsertParameters>
-    </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
-        DeleteMethod="Delete" InsertMethod="Insert" 
-        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-        TypeName="AfterSaleServiceSystem.DAL.dsClerkTableAdapters.tb_clerkTableAdapter" 
-        UpdateMethod="Update">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_id" Type="Int64" />
-        </DeleteParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="username" Type="String" />
-            <asp:Parameter Name="password" Type="String" />
-            <asp:Parameter Name="realname" Type="String" />
-            <asp:Parameter Name="age" Type="Int32" />
-            <asp:Parameter Name="sex" Type="String" />
-            <asp:Parameter Name="entrytime" Type="DateTime" />
-            <asp:Parameter Name="lastlogintime" Type="DateTime" />
-            <asp:Parameter Name="isonjob" Type="Boolean" />
-            <asp:Parameter Name="mobilephone" Type="String" />
-            <asp:Parameter Name="telephone" Type="String" />
-            <asp:Parameter Name="teleareacode" Type="String" />
-            <asp:Parameter Name="address" Type="String" />
-            <asp:Parameter Name="zipcode" Type="String" />
-            <asp:Parameter Name="headpic" Type="String" />
-            <asp:Parameter Name="nickname" Type="String" />
-            <asp:Parameter Name="authorityid" Type="Int32" />
-            <asp:Parameter Name="additional" Type="String" />
-            <asp:Parameter Name="Original_id" Type="Int64" />
-        </UpdateParameters>
-        <InsertParameters>
-            <asp:Parameter Name="username" Type="String" />
-            <asp:Parameter Name="password" Type="String" />
-            <asp:Parameter Name="realname" Type="String" />
-            <asp:Parameter Name="age" Type="Int32" />
-            <asp:Parameter Name="sex" Type="String" />
-            <asp:Parameter Name="entrytime" Type="DateTime" />
-            <asp:Parameter Name="lastlogintime" Type="DateTime" />
-            <asp:Parameter Name="isonjob" Type="Boolean" />
-            <asp:Parameter Name="mobilephone" Type="String" />
-            <asp:Parameter Name="telephone" Type="String" />
-            <asp:Parameter Name="teleareacode" Type="String" />
-            <asp:Parameter Name="address" Type="String" />
-            <asp:Parameter Name="zipcode" Type="String" />
-            <asp:Parameter Name="headpic" Type="String" />
-            <asp:Parameter Name="nickname" Type="String" />
-            <asp:Parameter Name="authorityid" Type="Int32" />
-            <asp:Parameter Name="additional" Type="String" />
-        </InsertParameters>
-    </asp:ObjectDataSource>
-    <asp:LinqDataSource ID="LinqDataSource1" runat="server">
-    </asp:LinqDataSource>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseAsssConnectionString %>"
-         
-        SelectCommand="SELECT tb_repairsheet.id, tb_repairsheet.guid, tb_repairsheet.producttype, tb_repairsheet.productnumber, tb_repairsheet.repairstateid, tb_repairsheet.clerkid, tb_repairsheet.customid, tb_repairsheet.process, tb_clerk.username, tb_repairstate.description, tb_custom.company FROM tb_repairsheet LEFT JOIN tb_custom ON tb_repairsheet.id = tb_custom.id LEFT JOIN tb_repairstate ON tb_repairsheet.id = tb_repairstate.id LEFT JOIN tb_clerk ON tb_repairsheet.clerkid = tb_clerk.id">
-
-           </asp:SqlDataSource>
-</p>
+    <p>
+        按维修人员筛选
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1"
+            DataTextField="username" DataValueField="id" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
+            AutoPostBack="True">
+        </asp:DropDownList>
+        按客户公司筛选
+        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource_custom"
+            DataTextField="company" DataValueField="id" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+        </asp:DropDownList>
+        按维修状态筛选
+        <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource_repairstate"
+            DataTextField="description" DataValueField="id" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
+        </asp:DropDownList>
+        <asp:ObjectDataSource ID="ObjectDataSource_repairstate" runat="server" OldValuesParameterFormatString="original_{0}"
+            SelectMethod="GetData" TypeName="AfterSaleServiceSystem.DAL.dsRepairStateTableAdapters.tb_repairstateTableAdapter">
+        </asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource_custom" runat="server" DeleteMethod="Delete"
+            InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData"
+            TypeName="AfterSaleServiceSystem.DAL.dsCustomerTableAdapters.tb_customTableAdapter"
+            UpdateMethod="Update">
+            <DeleteParameters>
+                <asp:Parameter Name="Original_id" Type="Int64" />
+            </DeleteParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="company" Type="String" />
+                <asp:Parameter Name="address" Type="String" />
+                <asp:Parameter Name="zipcode" Type="String" />
+                <asp:Parameter Name="name" Type="String" />
+                <asp:Parameter Name="telareacode" Type="String" />
+                <asp:Parameter Name="telephone" Type="String" />
+                <asp:Parameter Name="telextension" Type="String" />
+                <asp:Parameter Name="mobilephone" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="qq" Type="String" />
+                <asp:Parameter Name="additional" Type="String" />
+                <asp:Parameter Name="msn" Type="String" />
+                <asp:Parameter Name="Original_id" Type="Int64" />
+            </UpdateParameters>
+            <InsertParameters>
+                <asp:Parameter Name="company" Type="String" />
+                <asp:Parameter Name="address" Type="String" />
+                <asp:Parameter Name="zipcode" Type="String" />
+                <asp:Parameter Name="name" Type="String" />
+                <asp:Parameter Name="telareacode" Type="String" />
+                <asp:Parameter Name="telephone" Type="String" />
+                <asp:Parameter Name="telextension" Type="String" />
+                <asp:Parameter Name="mobilephone" Type="String" />
+                <asp:Parameter Name="email" Type="String" />
+                <asp:Parameter Name="qq" Type="String" />
+                <asp:Parameter Name="additional" Type="String" />
+                <asp:Parameter Name="msn" Type="String" />
+            </InsertParameters>
+        </asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete"
+            InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData"
+            TypeName="AfterSaleServiceSystem.DAL.dsClerkTableAdapters.tb_clerkTableAdapter"
+            UpdateMethod="Update">
+            <DeleteParameters>
+                <asp:Parameter Name="Original_id" Type="Int64" />
+            </DeleteParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="username" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="realname" Type="String" />
+                <asp:Parameter Name="age" Type="Int32" />
+                <asp:Parameter Name="sex" Type="String" />
+                <asp:Parameter Name="entrytime" Type="DateTime" />
+                <asp:Parameter Name="lastlogintime" Type="DateTime" />
+                <asp:Parameter Name="isonjob" Type="Boolean" />
+                <asp:Parameter Name="mobilephone" Type="String" />
+                <asp:Parameter Name="telephone" Type="String" />
+                <asp:Parameter Name="teleareacode" Type="String" />
+                <asp:Parameter Name="address" Type="String" />
+                <asp:Parameter Name="zipcode" Type="String" />
+                <asp:Parameter Name="headpic" Type="String" />
+                <asp:Parameter Name="nickname" Type="String" />
+                <asp:Parameter Name="authorityid" Type="Int32" />
+                <asp:Parameter Name="additional" Type="String" />
+                <asp:Parameter Name="Original_id" Type="Int64" />
+            </UpdateParameters>
+            <InsertParameters>
+                <asp:Parameter Name="username" Type="String" />
+                <asp:Parameter Name="password" Type="String" />
+                <asp:Parameter Name="realname" Type="String" />
+                <asp:Parameter Name="age" Type="Int32" />
+                <asp:Parameter Name="sex" Type="String" />
+                <asp:Parameter Name="entrytime" Type="DateTime" />
+                <asp:Parameter Name="lastlogintime" Type="DateTime" />
+                <asp:Parameter Name="isonjob" Type="Boolean" />
+                <asp:Parameter Name="mobilephone" Type="String" />
+                <asp:Parameter Name="telephone" Type="String" />
+                <asp:Parameter Name="teleareacode" Type="String" />
+                <asp:Parameter Name="address" Type="String" />
+                <asp:Parameter Name="zipcode" Type="String" />
+                <asp:Parameter Name="headpic" Type="String" />
+                <asp:Parameter Name="nickname" Type="String" />
+                <asp:Parameter Name="authorityid" Type="Int32" />
+                <asp:Parameter Name="additional" Type="String" />
+            </InsertParameters>
+        </asp:ObjectDataSource>
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server">
+        </asp:LinqDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseAsssConnectionString %>"
+            SelectCommand="SELECT tb_repairsheet.id, tb_repairsheet.guid, tb_repairsheet.producttype, tb_repairsheet.productnumber, tb_repairsheet.repairstateid, tb_repairsheet.clerkid, tb_repairsheet.customid, tb_repairsheet.process, tb_clerk.username, tb_repairstate.description, tb_custom.company FROM tb_repairsheet LEFT JOIN tb_custom ON tb_repairsheet.id = tb_custom.id LEFT JOIN tb_repairstate ON tb_repairsheet.id = tb_repairstate.id LEFT JOIN tb_clerk ON tb_repairsheet.clerkid = tb_clerk.id">
+        </asp:SqlDataSource>
+    </p>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
             <tr align="center">
                 <td>
-                    <a href='/Serviceman/SheetDetail.aspx?id=<%# Eval("id") %>'>
+                    <a href='/Serviceman/SheetDetail2.aspx?id=<%# Eval("id") %>'>
                         <asp:Label ID="guidLabel" runat="server" Text='<%# Eval("guid") %>' /></a>
                 </td>
                 <td>
@@ -197,8 +189,6 @@
         </LayoutTemplate>
     </asp:ListView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseAsssConnectionString %>"
-         
         SelectCommand="SELECT tb_repairsheet.id, tb_repairsheet.guid, tb_repairsheet.producttype, tb_repairsheet.productnumber, tb_repairsheet.repairstateid, tb_repairsheet.clerkid, tb_repairsheet.customid, tb_repairsheet.process, tb_clerk.username, tb_repairstate.description, tb_custom.company FROM tb_repairsheet LEFT JOIN tb_custom ON tb_repairsheet.customid = tb_custom.id LEFT JOIN tb_repairstate ON tb_repairsheet.repairstateid = tb_repairstate.id LEFT JOIN tb_clerk ON tb_repairsheet.clerkid = tb_clerk.id">
-
-           </asp:SqlDataSource>
+    </asp:SqlDataSource>
 </asp:Content>

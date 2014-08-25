@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AfterSaleServiceSystem.DAL.dsReportsTableAdapters;
 using AfterSaleServiceSystem.DAL.dsClerkTableAdapters;
+using AfterSaleServiceSystem.DAL.dsCustomerTableAdapters;
+using AfterSaleServiceSystem.DAL.dsRepairSheetTableAdapters;
+using AfterSaleServiceSystem.DAL;
 
 namespace AfterSaleServiceSystem.Serviceman
 {
@@ -13,14 +16,28 @@ namespace AfterSaleServiceSystem.Serviceman
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-#if DEBUG
-            if (Request["id"] == null)
-                sheetid = 1;
-#endif
-
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("/LogIn.ashx");
+                return;
+            }
             try
             {
                 sheetid = Convert.ToInt32(Request["id"]);
+
+                
+                #region 绑定客户数据
+                tb_repairsheetTableAdapter sheet = new tb_repairsheetTableAdapter();
+                dsRepairSheet.tb_repairsheetDataTable sheetDt = sheet.GetDataByid(sheetid);
+                if (sheetDt != null && sheetDt.Rows.Count > 0)
+                {
+                    dsRepairSheet.tb_repairsheetRow row = (dsRepairSheet.tb_repairsheetRow)sheetDt.Rows[0];
+                    tb_customTableAdapter custom = new tb_customTableAdapter();
+                    AfterSaleServiceSystem.DAL.dsCustomer.tb_customDataTable customDt = custom.GetDataByid(Convert.ToInt32(row.customid));
+                    FormView_custom.DataSource = customDt;
+                    FormView_custom.DataBind();
+                }
+                #endregion
 
             }
             catch (Exception)
@@ -31,10 +48,13 @@ namespace AfterSaleServiceSystem.Serviceman
 
             Label_No.Text = sheetid.ToString();
 
+
             tb_reportsTableAdapter reports = new tb_reportsTableAdapter();
 
             if (reports.GetDataBysheetid(sheetid).Rows.Count > 0)
+            {
                 FormView_report.DefaultMode = FormViewMode.Edit;
+            }
             else
                 FormView_report.DefaultMode = FormViewMode.Insert;
         }

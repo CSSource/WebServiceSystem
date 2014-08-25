@@ -86,10 +86,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dspartchange.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAL\dsRepairSheet.cs">
+      <DependentUpon>dsRepairSheet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\dsRepairSheet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRepairSheet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\dsRepairSheetReport.cs">
+      <DependentUpon>dsRepairSheetReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\dsRepairSheetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRepairSheetReport.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAL\dsRepairState.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,6 +193,13 @@
     </Compile>
     <Compile Include="Supervisor\createRepairSheet.aspx.designer.cs">
       <DependentUpon>createRepairSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\createRepairSheet2.aspx.cs">
+      <DependentUpon>createRepairSheet2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\createRepairSheet2.aspx.designer.cs">
+      <DependentUpon>createRepairSheet2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Supervisor\customListvew.aspx.cs">
       <DependentUpon>customListvew.aspx</DependentUpon>
@@ -273,6 +293,17 @@
     <None Include="DAL\dsRepairSheet.xss">
       <DependentUpon>dsRepairSheet.xsd</DependentUpon>
     </None>
+    <None Include="DAL\dsRepairSheetReport.xsc">
+      <DependentUpon>dsRepairSheetReport.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\dsRepairSheetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRepairSheetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\dsRepairSheetReport.xss">
+      <DependentUpon>dsRepairSheetReport.xsd</DependentUpon>
+    </None>
     <None Include="DAL\dsRepairState.xsc">
       <DependentUpon>dsRepairState.xsd</DependentUpon>
     </None>
@@ -295,6 +326,7 @@
     <None Include="DAL\dsReports.xss">
       <DependentUpon>dsReports.xsd</DependentUpon>
     </None>
+    <None Include="js\print\install_lodop32.zip" />
     <None Include="login_files\ScriptResource%281%29.axd" />
     <None Include="login_files\ScriptResource.axd" />
     <None Include="login_files\WebResource%281%29.axd" />
@@ -320,6 +352,7 @@
     <Content Include="js\jquery-1.10.2.js" />
     <Content Include="js\jquery-ui-1.10.4.js" />
     <Content Include="js\jquery-ui-1.10.4.min.js" />
+    <Content Include="js\print\LodopFuncs.js" />
     <Content Include="LogIn.ashx" />
     <Content Include="Global.asax" />
     <Content Include="img\bg_404.gif" />
@@ -343,6 +376,7 @@
     <Content Include="Serviceman\UserDetail.aspx" />
     <Content Include="Supervisor\clerkSheetView.aspx" />
     <Content Include="Supervisor\createRepairSheet.aspx" />
+    <Content Include="Supervisor\createRepairSheet2.aspx" />
     <Content Include="Supervisor\customListvew.aspx" />
     <Content Include="Supervisor\getBarCode.aspx" />
     <Content Include="Supervisor\repairSheetView.aspx" />
@@ -364,7 +398,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49722</DevelopmentServerPort>
+          <DevelopmentServerPort>7084</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

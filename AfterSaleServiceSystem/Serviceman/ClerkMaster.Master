@@ -7,17 +7,18 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type = "text/css" >.Xcenter{ text-align:center; margin:0 auto; }</style>    
 </head>
 <body>
-    <form id="form1" runat="server" >
-    <div style="width:800px;margin:auto">
-        <dl>
-            <dt>
-                <img width="250" height="40" src="../img/in_01.jpg" />
-            </dt>
-            <dt><font color="#663300"  = "3">销售及售后服务系统</font> </dt>
-        </dl>
-        <asp:HyperLink ID="HyperLink1" runat="server" >首页</asp:HyperLink>
+    <form id="form1" runat="server">
+    <div style="width: 800px; margin: auto">
+        <div>
+            <img width="250" height="40" src="../img/in_01.jpg" />
+            <div class="Xcenter">
+                <font color="#663300"  = "3">销售及售后服务系统</font>
+            </div>
+        </div>
+        <asp:HyperLink ID="HyperLink1" runat="server">首页</asp:HyperLink>
         <a href="../Serviceman/UserDetail.aspx">账户设置 |</a> <a href="../Serviceman/ChangePassword.aspx">
             修改密码 |</a> <a href="">搜索 |</a> <a href="../Logout.ashx">退出 |</a>
         <br />

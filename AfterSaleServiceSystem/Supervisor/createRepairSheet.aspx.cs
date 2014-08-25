@@ -21,7 +21,7 @@ namespace AfterSaleServiceSystem.Supervisor
                 string productCode = Context.Request["productCode"];
 
                 tb_repairsheetTableAdapter repairsheetTableAdapter = new tb_repairsheetTableAdapter();
-                if (repairsheetTableAdapter.GetDataByGuid(guidRequest).Rows.Count > 0)//已经存在该条形码
+                if (repairsheetTableAdapter.GetDataByGUID(guidRequest).Rows.Count > 0)//已经存在该条形码
                 {
                     Label1.Text = "该维修单已经被录入";
                 }
@@ -30,7 +30,7 @@ namespace AfterSaleServiceSystem.Supervisor
                     dsRepairSheet.tb_repairsheetDataTable ds = new dsRepairSheet.tb_repairsheetDataTable();
                     repairsheetTableAdapter.Fill(ds);
                     //repairsheetTableAdapter.Fill(dataset, "acUser");//用表User填充dataset对象
-                    repairsheetTableAdapter.InsertQuery(guidRequest, productType, productCode, 1, 0, DropDownList1.SelectedIndex + 1, 0);
+                    repairsheetTableAdapter.InsertNewSheet(guidRequest, productType, productCode, 1, 0, DropDownList1.SelectedIndex + 1, 0);
                     repairsheetTableAdapter.Update(ds);
                     isInsertSucced.Text = "录入成功";
                 }

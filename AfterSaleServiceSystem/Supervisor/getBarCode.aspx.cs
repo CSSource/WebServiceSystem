@@ -20,7 +20,7 @@ namespace AfterSaleServiceSystem.Supervisor
         protected void Button1_Click(object sender, EventArgs e)
         {
             string guid = Context.Request["barCode"];
-            Context.Response.Redirect("createRepairSheet.aspx?GUID="+guid);
+            Context.Response.Redirect("createRepairSheet2.aspx?GUID="+guid);
         }
     }
 }
